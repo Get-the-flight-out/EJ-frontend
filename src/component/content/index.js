@@ -15,8 +15,12 @@ class Content extends React.Component {
   }
 }
 
+let mapSetToProps = state => ({
+  lowFareSearch: state.lowFareSearch,
+});
+
 const mapDispatchToProps = dispatch => ({
   lowFareSearch : search => dispatch(lowFareActions.lowFareSearchAction(search)),
 });
 
-export default connect(null, mapDispatchToProps)(Content);
+export default connect(mapSetToProps, mapDispatchToProps)(Content);
