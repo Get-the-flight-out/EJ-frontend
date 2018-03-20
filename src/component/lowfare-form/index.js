@@ -1,4 +1,5 @@
 import React from 'react';
+import './lowfare-form.scss';
 
 class LowFareForm extends React.Component {
   constructor(props) {
