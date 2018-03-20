@@ -8,6 +8,7 @@ export default class AuthForm extends React.Component {
       username: '',
       email: '',
       password: '',
+      homeAirport: '',
       usernameError: null,
       emailError: null,
       passwordError: null,
@@ -30,9 +31,9 @@ export default class AuthForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    let {username, email, password} = this.state;
-    this.props.onComplete({ username, email, password })
-      .then(() => this.setState({ username: '', email: '', password: '' }))
+    let {username, email, password, homeAirport} = this.state;
+    this.props.onComplete({ username, email, password, homeAirport })
+      .then(() => this.setState({ username: '', email: '', password: '', homeAirport: ''}))
       .then(() => this.props.history.push('/content'))
       .catch(error => this.setState({error}));
   }
@@ -50,9 +51,17 @@ export default class AuthForm extends React.Component {
             type="text"
             name="username"
             placeholder="johnsmith1985"
-            pattern=""
             value={this.state.username}
             onChange={this.handleChange}/>
+
+          <input
+            type="text"
+            name="homeAirport"
+            placeholder="SEA or LAX"
+            pattern=""
+            value={this.state.homeAirport}
+            onChange={this.handleChange}/>
+
           {renderIf(this.state.usernameError, <span className="tooltip">{this.state.usernameError}</span>)}
 
           {renderIf(this.props.auth === 'signup',

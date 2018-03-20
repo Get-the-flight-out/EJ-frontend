@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400');
+@import '../../style/base/variables.scss';
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
+
+header {
+  margin: 0;
+  background: $beige;
+  font-family: 'Work Sans', Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+/* clear fix to avoid header disappearing */
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.logo {
+  float: left;
+  padding: 10px 0;
+}
+
+nav {
+  float: right;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: 110px;
+}
+nav li {
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 53px;
+  position: relative;
+}
+nav a {
+  color: $charcoal;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+nav a:hover {
+  color: rgb(205, 211, 207);
+}
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: $charcoal;
+
+  /* animation of nav bar links */
+  position: absolute;
+  top: 0;
+  width: 0%;
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
