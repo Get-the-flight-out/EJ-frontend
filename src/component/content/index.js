@@ -3,37 +3,35 @@ import {connect} from 'react-redux';
 import LowFareForm from '../lowfare-form/index';
 import FlightItem from '../flight-item/index';
 import * as lowFareActions from '../../action/lowfare-actions';
-import {renderIf} from '../../lib/utils';
+import * as inspirationAction from '../../action/inspiration-actions';
+import * as profileActions from '../../action/profile-actions';
+import InspirationForm from '../inspiration-form/index';
+
 
 class Content extends React.Component {
 
-  // componentWillMount() {
-  //   this.props.getMyProfile();
-  //   if(this.props.picture.length === 0){
-  //     this.props.getMyPicture();
-  //   }
-  // }
+  componentWillMount() {
+    this.props.getMyProfile();
+  }
+
   render() {
-    console.log('LOW FARE SEARCH', this.props.lowFareSearch);
     return (
       <div>
         <h1>Get The Flight Out!</h1>
         <LowFareForm onComplete={this.props.lowSearch}/>
+
+        <InspirationForm
+          onComplete={this.props.inspirationSearch}
+          profile={this.props.profile} />
+
         {this.props.lowFareSearch.length > 0 ?
-          this.props.lowFareSearch.map(flight =>
-            <div className="images" key={flight[0].fare.total_price}>
+          this.props.lowFareSearch[0].map(flight =>
+            <div className="images" key={flight.fare.total_price}>
               <FlightItem lowFareSearch={flight}/>
             </div>)
           :
           undefined
         }
-        {/* {renderIf(this.props.lowFareSearch.length > 0,
-          this.props.lowFareSearch[0].map(flight =>
-            <div className="images" key={flight[0].fare.total_price}>
-              <FlightItem lowFareSearch={flight}/>
-            </div>)
-        )} */}
-        {console.log(this.props.lowFareSearch[0])}
       </div>
     );
   }
@@ -41,10 +39,13 @@ class Content extends React.Component {
 
 let mapSetToProps = state => ({
   lowFareSearch: state.lowFareSearch,
+  profile: state.profile,
 });
 
 const mapDispatchToProps = dispatch => ({
   lowSearch : search => dispatch(lowFareActions.lowFareSearchAction(search)),
+  inspirationSearch : search => dispatch(inspirationAction.inspirationAction(search)),
+  getMyProfile : profile => dispatch(profileActions.getMeProfileRequest(profile)),
 });
 
 export default connect(mapSetToProps, mapDispatchToProps)(Content);
