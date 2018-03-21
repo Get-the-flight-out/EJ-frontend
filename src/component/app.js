@@ -31,7 +31,7 @@ export default class App extends React.Component {
                 component={() =>
                   token
                     ? <Content/>
-                    : <Redirect to="/welcome/signin"/>}
+                    : <Redirect to="/welcome/signup"/>}
               />
             </React.Fragment>
           </BrowserRouter>
