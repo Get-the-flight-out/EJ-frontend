@@ -4,7 +4,7 @@ import {renderIf} from '../../../lib/utils';
 export default class AuthForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state ={
+    this.state = {
       username: '',
       email: '',
       password: '',
@@ -22,7 +22,7 @@ export default class AuthForm extends React.Component {
   handleChange(e) {
     let {name, value} = e.target;
     this.setState({
-      [name]: value.trim(),
+      [name]: value,
       usernameError: name === 'username' && !value.trim() ? 'Username required' : null,
       emailError: name === 'email' && !value.trim() ? 'Email required' : null,
       passwordError: name === 'password' && !value.trim() ? 'Password required' : null,
@@ -34,7 +34,7 @@ export default class AuthForm extends React.Component {
     let {username, email, password, homeAirport} = this.state;
     this.props.onComplete({ username, email, password, homeAirport })
       .then(() => this.setState({ username: '', email: '', password: '', homeAirport: ''}))
-      .then(() => this.props.history.push('/content'))
+      .then(() => this.props.history.push('/'))
       .catch(error => this.setState({error}));
   }
 
@@ -50,25 +50,28 @@ export default class AuthForm extends React.Component {
           <input
             type="text"
             name="username"
-            placeholder="johnsmith1985"
+            placeholder="username"
             value={this.state.username}
             onChange={this.handleChange}/>
 
-          <input
-            type="text"
-            name="homeAirport"
-            placeholder="SEA or LAX"
-            pattern=""
-            value={this.state.homeAirport}
-            onChange={this.handleChange}/>
+          {renderIf(this.state.usernameError,
+            <span className="tooltip">{this.state.usernameError}</span>)}
 
-          {renderIf(this.state.usernameError, <span className="tooltip">{this.state.usernameError}</span>)}
+          {renderIf(this.props.auth === 'signup',
+            <input
+              type="text"
+              name="homeAirport"
+              placeholder="SEA or LAX"
+              pattern=""
+              value={this.state.homeAirport}
+              onChange={this.handleChange}/>
+          )}
 
           {renderIf(this.props.auth === 'signup',
             <input
               type="email"
               name="email"
-              placeholder="john.smith@example.com"
+              placeholder="email"
               value={this.state.email}
               onChange={this.handleChange}/>
           )}
@@ -76,7 +79,7 @@ export default class AuthForm extends React.Component {
           <input
             type="password"
             name="password"
-            placeholder="passwordplaceholder"
+            placeholder="password"
             value={this.state.password}
             onChange={this.handleChange}/>
 

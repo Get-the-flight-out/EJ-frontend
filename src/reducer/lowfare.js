@@ -1,10 +1,10 @@
-export default (state = [], {type, payload}) => {
+export default (state=null, {type, payload}) => {
 
   switch (type) {
   case 'LOW_FARE_SEARCH':
-    return [payload, ...state];
+    return payload;
   case 'INSPIRATION_SEARCH':
-    return delete state.data;
+    return null;
   default:
     return state;
   }

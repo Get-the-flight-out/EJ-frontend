@@ -1,5 +1,4 @@
 import React from 'react';
-// import image from '../../assets/Airport-manners.jpg';
 import { airportLookup } from '../../lib/airport-lookup';
 
 class FlightItem extends React.Component {
