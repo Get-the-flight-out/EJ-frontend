@@ -6,22 +6,17 @@ import './navbar.scss';
 
 class Navbar extends React.Component {
   render() {
+    console.log('Navbar __PROPS__', this.props);
     return (
       <header>
         <div className='container'>
-          <Link to='/content'>
+          <Link to='/'>
             <img className='logo' src='../../src/assets/logo.png' alt='logo' />
           </Link>
           <nav>
             <ul>
-              <li><Link to='/content'>Home</Link></li>
+              <li><Link to='/'>Home</Link></li>
               <li><Link to='/aboutus'>About Us</Link></li>
-              {renderIf(!this.props.token,
-                <li><Link to="/welcome/signup">Signup</Link></li>
-              )}
-              {renderIf(this.props.token,
-                <li><Link to="/welcome/signin">Signin</Link></li>
-              )}
             </ul>
           </nav>
         </div>

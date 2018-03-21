@@ -8,9 +8,7 @@ import * as profileActions from '../../action/profile-actions';
 import InspirationForm from '../inspiration-form/index';
 import InspirationItem from '../inspiration-item/index';
 
-
 class Content extends React.Component {
-
   componentWillMount() {
     this.props.getMyProfile();
   }
@@ -23,20 +21,20 @@ class Content extends React.Component {
 
         <InspirationForm
           onComplete={this.props.inpSearch}
-          profile={this.props.profile} />
+          profile={this.props.profile}/>
 
-        {this.props.inspirationSearch.length > 0 ?
-          this.props.inspirationSearch[0].map(flight =>
-            <div className="images" key={flight.price}>
+        {this.props.inspirationSearch ?
+          this.props.inspirationSearch.map((flight, idx) =>
+            <div className="images" key={'inspire_'.concat(idx)}>
               <InspirationItem inspirationSearch={flight}/>
             </div>)
           :
           undefined
         }
 
-        {this.props.lowFareSearch.length > 0 ?
-          this.props.lowFareSearch[0].map(flight =>
-            <div className="images" key={flight.fare.total_price}>
+        {this.props.lowFareSearch ?
+          this.props.lowFareSearch.map((flight, idx) =>
+            <div className="images" key={'lowfare_'.concat(idx)}>
               <FlightItem lowFareSearch={flight}/>
             </div>)
           :
@@ -56,7 +54,7 @@ let mapSetToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   lowSearch : search => dispatch(lowFareActions.lowFareSearchAction(search)),
   inpSearch : search => dispatch(inspirationAction.inspirationAction(search)),
-  getMyProfile : profile => dispatch(profileActions.getMeProfileRequest(profile)),
+  getMyProfile : profile => dispatch(profileActions.getMyProfileRequest(profile)),
 });
 
 export default connect(mapSetToProps, mapDispatchToProps)(Content);
