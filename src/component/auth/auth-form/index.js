@@ -6,6 +6,7 @@ import airports from '../../../data/airports.json';
 export default class AuthForm extends React.Component {
   constructor(props) {
     super(props);
+
     let options = {
       shouldSort: true,
       threshold: 0.6,
@@ -18,10 +19,10 @@ export default class AuthForm extends React.Component {
         weight: 0.5,
       }, {
         name: 'name',
-        weight: 0.3,
+        weight: 0.2,
       }, {
         name: 'city',
-        weight: 0.2,
+        weight: 0.4,
       }],
     };
 
