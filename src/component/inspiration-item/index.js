@@ -1,10 +1,11 @@
 import React from 'react';
-import image from '../../images/Airport-manners.jpg';
+// import image from '../../images/Airport-manners.jpg';
 import { airportLookup } from '../../lib/airport-lookup';
 
 class FlightItem extends React.Component {
 
   render() {
+    let image = `../../../src/assets/airport-img/${this.props.inspirationSearch.destination}.jpg`;
     return (
       <div className="flight-item">
         <img className="airport-image" src={image}/>
