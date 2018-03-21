@@ -1,6 +1,6 @@
 import React from 'react';
 import image from '../../images/Airport-manners.jpg';
-import airports from '../../lib/airport-lookup';
+import { airportLookup } from '../../lib/airport-lookup';
 
 class FlightItem extends React.Component {
 
@@ -11,7 +11,7 @@ class FlightItem extends React.Component {
 
         <h3 className="city-name"> Airport Code: {this.props.lowFareSearch.itineraries[0].outbound.flights[0].destination.airport}</h3>
 
-        <h3 className="city-name"> City: {airports.airportLookup(this.props.lowFareSearch.itineraries[0].outbound.flights[0].destination.airport)}</h3>
+        <h3 className="city-name"> City: {airportLookup(this.props.lowFareSearch.itineraries[0].outbound.flights[0].destination.airport)}</h3>
 
         <h3 className="city-name"> Depart Time: {this.props.lowFareSearch.itineraries[0].outbound.flights[0].departs_at}</h3>
 

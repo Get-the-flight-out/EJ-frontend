@@ -1,7 +1,7 @@
 import airports from '../data/airports';
 
 export const airportLookup = (code) => {
-  for (let airport of airports.data) {
+  for (let airport of airports) {
     if (airport.iata === code) return airport.city;
   }
 

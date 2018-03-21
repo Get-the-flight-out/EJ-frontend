@@ -1,4 +1,4 @@
-export const data = [
+[
 {"id":"1","name":"Goroka","city":"Goroka","country":"Papua New Guinea","iata":"GKA","icao":"AYGA","latitude":"-6.081689","longitude":"145.391881","altitude":"5282","timezone":"10","dst":"U","tz":"Pacific/Port_Moresby"}
 ,
 {"id":"2","name":"Madang","city":"Madang","country":"Papua New Guinea","iata":"MAG","icao":"AYMD","latitude":"-5.207083","longitude":"145.7887","altitude":"20","timezone":"10","dst":"U","tz":"Pacific/Port_Moresby"}
@@ -16212,4 +16212,4 @@ export const data = [
 {"id":"9540","name":"Deer Harbor Seaplane","city":"Deer Harbor","country":"United States","iata":"DHB","icao":"\\N","latitude":"48.618397","longitude":"-123.00596","altitude":"0","timezone":"-8","dst":"A","tz":"America/Los_Angeles"}
 ,
 {"id":"9541","name":"San Diego Old Town Transit Center","city":"San Diego","country":"United States","iata":"OLT","icao":"\\N","latitude":"32.7552","longitude":"-117.1995","altitude":"0","timezone":"-8","dst":"A","tz":"America/Los_Angeles"}
-];
+]
