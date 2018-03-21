@@ -1,6 +1,6 @@
 import React from 'react';
-// import image from '../../images/Airport-manners.jpg';
 import { airportLookup } from '../../lib/airport-lookup';
+import missingImage from '../../assets/airport-img/Airport-manners.jpg';
 
 class FlightItem extends React.Component {
 
@@ -8,7 +8,9 @@ class FlightItem extends React.Component {
     let image = `../../../src/assets/airport-img/${this.props.inspirationSearch.destination}.jpg`;
     return (
       <div className="flight-item">
-        <img className="airport-image" src={image}/>
+        <object data={image} type="image/jpg">
+          <img className="airport-image" src={missingImage}/>
+        </object>
 
         <h3 className="city-name"> City: {airportLookup(this.props.inspirationSearch.destination)}</h3>
 

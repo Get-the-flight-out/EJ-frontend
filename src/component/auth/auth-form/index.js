@@ -1,14 +1,36 @@
 import React from 'react';
+import Fuse from  'fuse-js-latest';
 import {renderIf} from '../../../lib/utils';
+import airports from '../../../data/airports.json';
 
 export default class AuthForm extends React.Component {
   constructor(props) {
     super(props);
+    let options = {
+      shouldSort: true,
+      threshold: 0.6,
+      location: 0,
+      distance: 100,
+      maxPatternLength: 32,
+      minMatchCharLength: 1,
+      keys: [{
+        name: 'iata',
+        weight: 0.5,
+      }, {
+        name: 'name',
+        weight: 0.3,
+      }, {
+        name: 'city',
+        weight: 0.2,
+      }],
+    };
+
     this.state = {
       username: '',
       email: '',
       password: '',
       homeAirport: '',
+      fuse: new Fuse(airports, options),
       usernameError: null,
       emailError: null,
       passwordError: null,
@@ -17,6 +39,7 @@ export default class AuthForm extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleFuzzyIata = this.handleFuzzyIata.bind(this);
   }
 
   handleChange(e) {
@@ -27,6 +50,13 @@ export default class AuthForm extends React.Component {
       emailError: name === 'email' && !value.trim() ? 'Email required' : null,
       passwordError: name === 'password' && !value.trim() ? 'Password required' : null,
     });
+  }
+
+  handleFuzzyIata(e) {
+    let {name, value} = e.target;
+    let results = this.state.fuse.search(value);
+    console.log('this is fuse:', results);
+    this.handleChange(e);
   }
 
   handleSubmit(e) {
@@ -43,47 +73,47 @@ export default class AuthForm extends React.Component {
       <div>
         <h3>Welcome</h3>
         <form
-          className="auth-form"
+          className='auth-form'
           onSubmit={this.handleSubmit}
           noValidate>
 
           <input
-            type="text"
-            name="username"
-            placeholder="username"
+            type='text'
+            name='username'
+            placeholder='username'
             value={this.state.username}
             onChange={this.handleChange}/>
 
           {renderIf(this.state.usernameError,
-            <span className="tooltip">{this.state.usernameError}</span>)}
+            <span className='tooltip'>{this.state.usernameError}</span>)}
 
           {renderIf(this.props.auth === 'signup',
             <input
-              type="text"
-              name="homeAirport"
-              placeholder="SEA or LAX"
-              pattern=""
+              type='text'
+              name='homeAirport'
+              placeholder='SEA or LAX'
+              pattern=''
               value={this.state.homeAirport}
-              onChange={this.handleChange}/>
+              onChange={this.handleFuzzyIata}/>
           )}
 
           {renderIf(this.props.auth === 'signup',
             <input
-              type="email"
-              name="email"
-              placeholder="email"
+              type='email'
+              name='email'
+              placeholder='email'
               value={this.state.email}
               onChange={this.handleChange}/>
           )}
 
           <input
-            type="password"
-            name="password"
-            placeholder="password"
+            type='password'
+            name='password'
+            placeholder='password'
             value={this.state.password}
             onChange={this.handleChange}/>
 
-          <button type="submit">{this.props.auth}</button>
+          <button type='submit'>{this.props.auth}</button>
         </form>
       </div>
     );
