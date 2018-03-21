@@ -18,7 +18,7 @@ class Content extends React.Component {
   render() {
     return (
       <div>
-        <h1>Get The Flight Out!</h1>
+        {/*<h1>Get The Flight Out!</h1>*/}
         <LowFareForm onComplete={this.props.lowSearch}/>
 
         <InspirationForm
