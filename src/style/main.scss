@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400'); // Jordan
+@import './base/variables'; // Jordan
+
 body {
-  background-color: lightseagreen;
-  color: beige;
+  background-color: $mint; // Jordan
+  color: $charcoal;
   text-transform: uppercase;
+  font-family: "Work Sans" // Jordan
 };
 
 // input {
