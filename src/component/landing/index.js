@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import AuthForm from '../auth/auth-form';
 import {signupRequest, signinRequest} from '../../action/auth-actions';
 
-
 class Landing extends React.Component {
   render() {
     console.log('__LANDING_PROPS__', this.props);
@@ -14,6 +13,10 @@ class Landing extends React.Component {
 
     return (
       <div className="landing-container">
+        {/* history:    pass down to redirect after submission
+            auth:       will be signin or signup
+            onComplete: will either be signinRequest or signupRequest
+        */}
         <AuthForm
           history={this.props.history}
           auth={params.auth}
