@@ -1,5 +1,7 @@
 import React from 'react';
 import image from '../../images/Airport-manners.jpg';
+import { airportLookup } from '../../lib/airport-lookup';
+
 class FlightItem extends React.Component {
 
   render() {
@@ -8,6 +10,8 @@ class FlightItem extends React.Component {
         <img className="airport-image" src={image}/>
 
         <h3 className="city-name"> Airport Code: {this.props.lowFareSearch.itineraries[0].outbound.flights[0].destination.airport}</h3>
+
+        <h3 className="city-name"> City: {airportLookup(this.props.lowFareSearch.itineraries[0].outbound.flights[0].destination.airport)}</h3>
 
         <h3 className="city-name"> Depart Time: {this.props.lowFareSearch.itineraries[0].outbound.flights[0].departs_at}</h3>
 
