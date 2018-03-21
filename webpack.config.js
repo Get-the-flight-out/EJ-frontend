@@ -37,6 +37,12 @@ module.exports = {
   },
   module: {
     rules: [
+      // {
+      //   test: /\.json$/,
+      //   exclude: /node_modules/,
+      //   include: './data/airports.json',
+      //   loader: 'json-loader',
+      // },
       {
         test: /\.js$/,
         exclude: /node_modules/,
