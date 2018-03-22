@@ -13,8 +13,6 @@ class LowFareForm extends React.Component {
       nonstop: true,
       max_price: '',
       return_date: '',
-      originFuzzyShown: false,
-      destinationFuzzyShown: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -24,11 +22,6 @@ class LowFareForm extends React.Component {
     let {name, value} = e.target;
     this.setState({[name]: value});
   };
-
-  handleFuzzyChange(e) {
-    this.setState({fuzzyShown: true});
-    this.handleChange(e);
-  }
 
   handleSubmit(e) {
     e.preventDefault();
