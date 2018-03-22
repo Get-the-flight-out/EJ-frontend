@@ -106,9 +106,9 @@ export default class AuthForm extends React.Component {
               onChange={this.handleFuzzyIata}/>
           )}
           {renderIf(this.state.fuzzyShown,
-          <FuzzySuggestion
-            fuseResults={this.state.fuseResults}
-            setState={(state) => this.setState(state)}/>
+            <FuzzySuggestion
+              fuseResults={this.state.fuseResults}
+              setState={(state) => this.setState(state)}/>
           )}
 
           {renderIf(this.props.auth === 'signup',

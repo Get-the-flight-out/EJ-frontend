@@ -1,5 +1,7 @@
 import React from 'react';
 import './lowfare-form.scss';
+import {renderIf} from '../../lib/utils';
+import FuzzySuggestion from '../fuzzy-suggestion/index';
 
 class LowFareForm extends React.Component {
   constructor(props) {
@@ -11,6 +13,7 @@ class LowFareForm extends React.Component {
       nonstop: true,
       max_price: '',
       return_date: '',
+      fuzzyShown: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,6 +21,7 @@ class LowFareForm extends React.Component {
 
   handleChange(e) {
     let {name, value} = e.target;
+    fuzzyShown: true,
     this.setState({[name]: value});
   };
 
@@ -75,6 +79,12 @@ class LowFareForm extends React.Component {
               placeholder="Destination"
               value={this.state.destination}
               onChange={this.handleChange}/>
+
+            {renderIf(this.state.fuzzyShown,
+              <FuzzySuggestion
+                fuseResults={this.state.fuseResults}
+                setState={(state) => this.setState(state)}/>
+            )}
 
             <label className="labels">Return</label>
             <input

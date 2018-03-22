@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import './landing.scss';
 import AuthForm from '../auth/auth-form';
 import {signupRequest, signinRequest} from '../../action/auth-actions';
 
