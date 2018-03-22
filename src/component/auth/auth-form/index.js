@@ -37,6 +37,7 @@ export default class AuthForm extends React.Component {
       emailError: null,
       passwordError: null,
       error: null,
+      fuzzyShown: true,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -59,7 +60,6 @@ export default class AuthForm extends React.Component {
     let {name, value} = e.target;
     const fuseResults = this.state.fuse.search(value).slice(0, 6);
     this.setState({fuseResults});
-    console.log('this is fuse:', this.state.fuseResults);
   }
 
   handleSubmit(e) {
@@ -92,6 +92,7 @@ export default class AuthForm extends React.Component {
 
           {renderIf(this.props.auth === 'signup',
             <input
+              className='airport-code'
               type='text'
               name='homeAirport'
               placeholder='SEA or LAX'
