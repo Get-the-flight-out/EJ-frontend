@@ -43,49 +43,44 @@ class LowFareForm extends React.Component {
           className="lowfare-form generic-form"
           onSubmit={this.handleSubmit}
           noValidate>
+          <div>
+            <input
+              type="text"
+              name="origin"
+              placeholder="Origin"
+              value={this.state.origin}
+              onChange={this.handleChange}/>
 
-          <input
-            type="text"
-            name="origin"
-            placeholder="origin"
-            value={this.state.origin}
-            onChange={this.handleChange}/>
+            <input
+              type="date"
+              name="departure_date"
+              placeholder="departure Date"
+              value={this.state.departure_date}
+              onChange={this.handleChange}/>
 
-          <input
-            type="text"
-            name="destination"
-            placeholder="destination"
-            value={this.state.destination}
-            onChange={this.handleChange}/>
+            <input
+              type="number"
+              name="max_price"
+              placeholder="Max Price"
+              value={this.state.max_price}
+              onChange={this.handleChange}/>
 
-          <input
-            type="date"
-            name="departure_date"
-            placeholder="departure Date"
-            value={this.state.departure_date}
-            onChange={this.handleChange}/>
+            <button type="submit">GTFO!!</button>
+          </div>
+          <div className="lowfare-rightside">
+            <input
+              type="text"
+              name="destination"
+              placeholder="Destination"
+              value={this.state.destination}
+              onChange={this.handleChange}/>
 
-          <input
-            type="checkbox"
-            name="nonstop"
-            placeholder="non-stop"
-            value={this.state.nonstop}
-            onChange={this.handleChange}/>
-
-          <input
-            type="number"
-            name="max_price"
-            placeholder="Max Price"
-            value={this.state.max_price}
-            onChange={this.handleChange}/>
-
-          <input
-            type="date"
-            name="return_date"
-            value={this.state.return_date}
-            onChange={this.handleChange}/>
-
-          <button type="submit">GTFO!!</button>
+            <input
+              type="date"
+              name="return_date"
+              value={this.state.return_date}
+              onChange={this.handleChange}/>
+          </div>
         </form>
       </div>
     );

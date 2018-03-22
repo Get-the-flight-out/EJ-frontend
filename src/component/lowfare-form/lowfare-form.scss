@@ -1,4 +1,5 @@
 @import '../../style/base/variables.scss';
+@import url('https://fonts.googleapis.com/css?family=Raleway:400');
 
 .lowfare-form {
   background: #abaaaa91;
@@ -14,8 +15,42 @@
   box-shadow: 5px 5px 10px 0px;
 }
 
-/*
- .lowfare-form input {
-   border-bottom: solid 2px $charcoal;
+.lowfare-form input[type=text],
+.lowfare-form input[type=number],
+.lowfare-form input[type=date] {
+  // text-transform: uppercase;
+  font-weight: bold;
+  border: 0;
+  font-family: Raleway, Helvetica;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.651);
+  box-shadow: none;
+  border-radius: 0px;
+  outline: none;
+  background-color: rgba(0,0,0,0);
+ };
+
+ .lowfare-form input[type=text]::placeholder,
+ .lowfare-form input[type=number]::placeholder,
+ .lowfare-form input[type=date]::placeholder{
+  color: black;
  }
- */
+
+// .lowfare-form input[type=number] {
+//   width: 45%;
+// }
+
+ .lowfare-form input[type=text],
+ .lowfare-form input[type=number],
+ .lowfare-form input[type=date] {
+   width: 50%;
+  //  margin-right: 4%;
+ }
+
+ .lowfare-form input[type=date]::-webkit-inner-spin-button {
+  display: none;
+}
+
+.lowfare-rightside input[type=text],
+.lowfare-rightside input[type=date] {
+  float: right;
+}
