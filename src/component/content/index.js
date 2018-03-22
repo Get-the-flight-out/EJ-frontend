@@ -11,7 +11,9 @@ import './content.scss';
 
 class Content extends React.Component {
   componentWillMount() {
-    this.props.getMyProfile();
+    console.log('componentWillMount: Attempting to get profile: token: ',
+      JSON.parse(this.props.token));
+    this.props.getMyProfile(this.props.token);
   }
 
   render() {
@@ -56,12 +58,13 @@ let mapSetToProps = state => ({
   lowFareSearch: state.lowFareSearch,
   profile: state.profile,
   inspirationSearch: state.inspirationSearch,
+  token: state.token,
 });
 
 const mapDispatchToProps = dispatch => ({
   lowSearch : search => dispatch(lowFareActions.lowFareSearchAction(search)),
   inpSearch : search => dispatch(inspirationAction.inspirationAction(search)),
-  getMyProfile : profile => dispatch(profileActions.getMyProfileRequest(profile)),
+  getMyProfile : token => dispatch(profileActions.getMyProfileRequest(token)),
 });
 
 export default connect(mapSetToProps, mapDispatchToProps)(Content);

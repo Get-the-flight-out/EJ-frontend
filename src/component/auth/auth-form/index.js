@@ -7,7 +7,6 @@ export default class AuthForm extends React.Component {
   constructor(props) {
     super(props);
 
-
     let options = {
       shouldSort: true,
       threshold: 0.2,
@@ -66,14 +65,30 @@ export default class AuthForm extends React.Component {
     e.preventDefault();
     let {username, email, password, homeAirport} = this.state;
     this.props.onComplete({ username, email, password, homeAirport })
-      .then(() => this.setState({ username: '', email: '', password: '', homeAirport: ''}))
-      .then(() => this.props.history.push('/'))
-      .catch(error => this.setState({error}));
+    this.setState({ username: '', email: '', password: '', homeAirport: ''});
   }
 
   render() {
+    let signupJsx =
+      <React.Fragment>
+        <input
+          type='text'
+          name='homeAirport'
+          placeholder='SEA or SEATTLE'
+          value={this.state.homeAirport}
+          onChange={this.handleFuzzyIata}/>
+
+        <input
+          type='email'
+          name='email'
+          placeholder='email'
+          value={this.state.email}
+          onChange={this.handleChange}/>
+      </React.Fragment>;
+
+
     return (
-      <div>
+      <div className="auth-form-div">
         <h3>Welcome</h3>
         <form
           className='auth-form'
@@ -90,25 +105,8 @@ export default class AuthForm extends React.Component {
           {renderIf(this.state.usernameError,
             <span className='tooltip'>{this.state.usernameError}</span>)}
 
-          {renderIf(this.props.auth === 'signup',
-            <input
-              type='text'
-              name='homeAirport'
-              placeholder='SEA or SEATTLE'
-
-              pattern=''
-              value={this.state.homeAirport}
-              onChange={this.handleFuzzyIata}/>
-          )}
-
-          {renderIf(this.props.auth === 'signup',
-            <input
-              type='email'
-              name='email'
-              placeholder='email'
-              value={this.state.email}
-              onChange={this.handleChange}/>
-          )}
+          {/* sign-up specific fields */}
+          { this.props.type !== 'signin' ? signupJsx : undefined }
 
           <input
             type='password'
