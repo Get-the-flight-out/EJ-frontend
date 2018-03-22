@@ -17,7 +17,6 @@ class Content extends React.Component {
   render() {
     return (
       <div className="content-div">
-        {/*<h1>Get The Flight Out!</h1>*/}
         <div className="lowfareform-wrapper">
           <LowFareForm onComplete={this.props.lowSearch}/>
         </div>
@@ -26,24 +25,28 @@ class Content extends React.Component {
           onComplete={this.props.inpSearch}
           profile={this.props.profile}/>
 
-        {this.props.inspirationSearch ?
-          this.props.inspirationSearch.map((flight, idx) =>
-            <div className="images" key={'inspire_'.concat(idx)}>
-              <InspirationItem
-                inspirationSearch={flight}/>
-            </div>)
-          :
-          undefined
-        }
+        <div className="image-holder">
+          {this.props.inspirationSearch ?
+            this.props.inspirationSearch.map((flight, idx) =>
+              <div className="flight-obj" key={'inspire_'.concat(idx)}>
+                <InspirationItem
+                  inspirationSearch={flight}/>
+              </div>)
+            :
+            undefined
+          }
+        </div>
 
-        {this.props.lowFareSearch ?
-          this.props.lowFareSearch.map((flight, idx) =>
-            <div className="images" key={'lowfare_'.concat(idx)}>
-              <FlightItem lowFareSearch={flight}/>
-            </div>)
-          :
-          undefined
-        }
+        <div className="image-holder">
+          {this.props.lowFareSearch ?
+            this.props.lowFareSearch.map((flight, idx) =>
+              <div className="flight-obj" key={'lowfare_'.concat(idx)}>
+                <FlightItem lowFareSearch={flight}/>
+              </div>)
+            :
+            undefined
+          }
+        </div>
       </div>
     );
   }

@@ -1,5 +1,6 @@
 import React from 'react';
 
+import './inspiration-item.scss';
 import {connect} from 'react-redux';
 import { airportLookup } from '../../lib/airport-lookup';
 import * as inspirationAction from '../../action/inspiration-actions';
@@ -15,24 +16,24 @@ class FlightItem extends React.Component {
     let retDate = this.props.inspirationSearch.return_date;
     let image = `../../../src/assets/airport-img/${this.props.inspirationSearch.destination}.jpg`;
     return (
-      <div className="flight-item">>
-      <object data={image} type="image/jpg">
-        <img className="airport-image" src={missingImage}/>
-      </object>
+      <div className="flight-item">
+        <object className="img-obj" data={image} type="image/jpg">
+          <img className="airport-image" src={missingImage}/>
+        </object>
 
-      <h3 className="city-name"> City: {airportLookup(city)}</h3>
-      <h3 className="city-name"> Airport Code: {city}</h3>
-      <h3 className="city-name"> Depart Date: {depDate}</h3>
-      <h3 className="city-name"> Price: {this.props.inspirationSearch.price}</h3>
-      <h3 className="city-name"> Return Date: {retDate}</h3>
+        <h3 className="city-name"> City: {airportLookup(city)}</h3>
+        <h3 className="city-name"> Airport Code: {city}</h3>
+        <h3 className="city-name"> Depart Date: {depDate}</h3>
+        <h3 className="city-name"> Price: {this.props.inspirationSearch.price}</h3>
+        <h3 className="city-name"> Return Date: {retDate}</h3>
 
-      <a href={`https://www.kayak.com/flights/${origin}-${city}/${depDate}/${retDate}/?sort=price_a`}>Go To Flight</a>
+        <a href={`https://www.kayak.com/flights/${origin}-${city}/${depDate}/${retDate}/?sort=price_a`}>Go To Flight</a>
 
-      {area === 'usa' ?
-        <button type='submit' onClick={() => this.props.inpSearch({origin: this.props.inspirationSearch.destination, area: 'all'})}>{'CLICK ME'}</button>
-        :
-        undefined
-      }
+        {area === 'usa' ?
+          <button type='submit' onClick={() => this.props.inpSearch({origin: this.props.inspirationSearch.destination, area: 'all'})}>{'CLICK ME'}</button>
+          :
+          undefined
+        }
 
       </div>
     );
@@ -45,7 +46,3 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(null, mapDispatchToProps)(FlightItem);
-
-// export default FlightItem;
-
-// onDoubleClick={this.props.onComplete({origin: this.props.inspirationSearch.destination})}
