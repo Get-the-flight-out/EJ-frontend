@@ -13,16 +13,30 @@ input[type=button] {
   font-size: 40px;
   font-weight: bold;
   border: 0;
+  color: white;
   text-shadow: 2px 1px 2px black;
   text-transform: uppercase;
   font-family: Raleway, Helvetica;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url('../../assets/airport-img/ICN.jpg');
+  // background-image: url('../../assets/airport-img/ICN.jpg');
   margin-right: 15px;
   transition: 150ms;
   outline: none;
   box-shadow: 0px 0px 5px 0px;
+}
+
+.EU {
+  background-image: url('../../assets/airport-img/EU.jpg');
+}
+.ALL {
+  background-image: url('../../assets/airport-img/ALL.jpg');
+}
+.USA {
+  background-image: url('../../assets/airport-img/USA.jpg');
+}
+.ASIA {
+  background-image: url('../../assets/airport-img/ASIA.jpg');
 }
 
 input[type=button]:hover {
@@ -33,7 +47,7 @@ input[type=button]:hover {
   background: #abaaaa1f;
   width: 80%;
   margin: 0 auto;
-  margin-bottom: 15%;
+  margin-bottom: 3%;
   padding: 40px 60px 25px;
   opacity: 0.8;
   border-radius: 2px;

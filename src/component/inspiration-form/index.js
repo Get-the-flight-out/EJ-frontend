@@ -48,34 +48,32 @@ class InspirationForm extends React.Component {
   render() {
     return (
       <div>
-
-        <h3>GET OUT RIGHT NOW!!!!</h3>
         <form
           className="inspiration-form generic-form"
           noValidate>
           <div className="button-form">
-            <input className="search-btn"
+            <input className="search-btn USA"
               type="button"
               name="area"
               placeholder="USA"
               value="usa"
               onClick={this.handleChange}/>
 
-            <input className="search-btn"
+            <input className="search-btn EU"
               type="button"
               name="area"
               placeholder="EUROPE"
               value="eu"
               onClick={this.handleChange}/>
 
-            <input className="search-btn"
+            <input className="search-btn ASIA"
               type="button"
               name="area"
               placeholder="ASIA"
               value="asia"
               onClick={this.handleChange}/>
 
-            <input className="search-btn"
+            <input className="search-btn ALL"
               type="button"
               name="area"
               placeholder="The WORLD!"

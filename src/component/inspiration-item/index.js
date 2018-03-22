@@ -1,5 +1,6 @@
 import React from 'react';
 
+import './inspiration-item.scss';
 import {connect} from 'react-redux';
 import { airportLookup } from '../../lib/airport-lookup';
 import * as inspirationAction from '../../action/inspiration-actions';
@@ -16,7 +17,7 @@ class FlightItem extends React.Component {
     let image = `../../../src/assets/airport-img/${this.props.inspirationSearch.destination}.jpg`;
     return (
       <div className="flight-item">
-        <object data={image} type="image/jpg">
+        <object className="img-obj" data={image} type="image/jpg">
           <img className="airport-image" src={missingImage}/>
         </object>
 

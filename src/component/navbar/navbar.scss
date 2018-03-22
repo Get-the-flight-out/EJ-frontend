@@ -8,9 +8,11 @@
 
 header {
   margin: 0;
-  background: $beige;
+  background: rgba(229, 238, 193, 0.74);
   font-family: 'Work Sans', Helvetica, sans-serif;
   font-weight: 400;
+  position: fixed;
+  width: 100%;
 }
 
 /* clear fix to avoid header disappearing */
