@@ -8,11 +8,12 @@
 
 header {
   margin: 0;
-  background: rgba(229, 238, 193, 0.74);
   font-family: 'Work Sans', Helvetica, sans-serif;
   font-weight: 400;
   position: fixed;
   width: 100%;
+  z-index: 100;
+  transition: 350ms;
 }
 
 /* clear fix to avoid header disappearing */
@@ -22,9 +23,22 @@ header::after {
   clear: both;
 }
 
+.non-opaqueHeader {
+  opacity: 1;
+  background: gray;
+  box-shadow: 0 1px 3px gray;
+}
+
+.opaqueHeader {
+  opacity: .8;
+  background: #abaaaa00;
+  box-shadow: 0 0 19px 0.5px #333333;
+}
+
 .logo {
   float: left;
   padding: 10px 0;
+
 }
 
 nav {
@@ -34,16 +48,17 @@ nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
-  height: 110px;
+  height: 90px;
 }
 nav li {
   display: inline-block;
-  margin-left: 70px;
-  padding-top: 53px;
+  margin-left: 60px;
+  padding-top: 40px;
   position: relative;
 }
 nav a {
-  color: $charcoal;
+  // color: $charcoal;
+  color: black;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 16px;
