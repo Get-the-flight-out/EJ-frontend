@@ -1,51 +1,26 @@
 import React from 'react';
 import Fuse from  'fuse-js-latest';
+import IataInput from '../../iata-input';
 import {renderIf} from '../../../lib/utils';
 import airports from '../../../data/airports.json';
-import FuzzySuggestion from '../../fuzzy-suggestion';
 
 export default class AuthForm extends React.Component {
   constructor(props) {
     super(props);
-
-
-    let options = {
-      shouldSort: true,
-      threshold: 0.1,
-      location: 0,
-      distance: 75,
-      maxPatternLength: 10,
-      minMatchCharLength: 1,
-      keys: [{
-        name: 'iata',
-        weight: 0.5,
-      }, {
-        name: 'name',
-
-        weight: 0.2,
-      }, {
-        name: 'city',
-        weight: 0.4,
-      }],
-    };
 
     this.state = {
       username: '',
       email: '',
       password: '',
       homeAirport: '',
-      fuse: new Fuse(airports, options),
-      fuseResults: [],
       usernameError: null,
       emailError: null,
       passwordError: null,
       error: null,
-      fuzzyShown: false,
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleFuzzyIata = this.handleFuzzyIata.bind(this);
   }
 
   handleChange(e) {
@@ -55,15 +30,7 @@ export default class AuthForm extends React.Component {
       usernameError: name === 'username' && !value.trim() ? 'Username required' : null,
       emailError: name === 'email' && !value.trim() ? 'Email required' : null,
       passwordError: name === 'password' && !value.trim() ? 'Password required' : null,
-      fuzzyShown: true,
     });
-  }
-
-  handleFuzzyIata(e) {
-    this.handleChange(e);
-    let {name, value} = e.target;
-    const fuseResults = this.state.fuse.search(value).slice(0, 6);
-    this.setState({fuseResults});
   }
 
   handleSubmit(e) {
@@ -95,20 +62,11 @@ export default class AuthForm extends React.Component {
             <span className='tooltip'>{this.state.usernameError}</span>)}
 
           {renderIf(this.props.auth === 'signup',
-            <input
-              className='airport-code'
-              type='text'
-              name='homeAirport'
-              placeholder='SEA or SEATTLE'
-
-              pattern=''
+            <IataInput
+              name="homeAirport"
+              placeholder="SEA or SEATTLE"
               value={this.state.homeAirport}
-              onChange={this.handleFuzzyIata}/>
-          )}
-          {renderIf(this.state.fuzzyShown,
-            <FuzzySuggestion
-              fuseResults={this.state.fuseResults}
-              setState={(state) => this.setState(state)}/>
+              setState={(state) => {this.setState(state)}}/>
           )}
 
           {renderIf(this.props.auth === 'signup',
