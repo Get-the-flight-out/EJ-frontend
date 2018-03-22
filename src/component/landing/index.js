@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
+import './landing.scss';
 import AuthForm from '../auth/auth-form';
 import {signupRequest, signinRequest} from '../../action/auth-actions';
 import * as routes from '../../routes';

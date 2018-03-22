@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400');
+@import '../../style/base/variables.scss';
+
+
+.fuzzy-suggestions {
+  font-family: "Work Sans";
+  li:hover {
+    background-color: $navy;
+    h3 {
+      color: $beige;
+    }
+  }
+  li {
+    background-color: $beige;
+    padding-left: 10px;
+
+    h3 {
+      color: $navy;
+      font-weight: bold;
+    }
+    p {
+
+    }
+  }
+}

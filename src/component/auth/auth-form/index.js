@@ -1,38 +1,17 @@
 import React from 'react';
 import Fuse from  'fuse-js-latest';
+import IataInput from '../../iata-input';
 import {renderIf} from '../../../lib/utils';
 import airports from '../../../data/airports.json';
 
 export default class AuthForm extends React.Component {
   constructor(props) {
     super(props);
-
-    let options = {
-      shouldSort: true,
-      threshold: 0.2,
-      location: 0,
-      distance: 0,
-      maxPatternLength: 32,
-      minMatchCharLength: 1,
-      keys: [{
-        name: 'iata',
-        weight: 0.5,
-      }, {
-        name: 'name',
-
-        weight: 0.2,
-      }, {
-        name: 'city',
-        weight: 0.4,
-      }],
-    };
-
     this.state = {
       username: '',
       email: '',
       password: '',
       homeAirport: '',
-      fuse: new Fuse(airports, options),
       usernameError: null,
       emailError: null,
       passwordError: null,
@@ -41,7 +20,6 @@ export default class AuthForm extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleFuzzyIata = this.handleFuzzyIata.bind(this);
   }
 
   handleChange(e) {
@@ -54,13 +32,6 @@ export default class AuthForm extends React.Component {
     });
   }
 
-  handleFuzzyIata(e) {
-    let {name, value} = e.target;
-    let results = this.state.fuse.search(value);
-    console.log('this is fuse:', results);
-    this.handleChange(e);
-  }
-
   handleSubmit(e) {
     e.preventDefault();
     let {username, email, password, homeAirport} = this.state;
@@ -71,12 +42,12 @@ export default class AuthForm extends React.Component {
   render() {
     let signupJsx =
       <React.Fragment>
-        <input
-          type='text'
-          name='homeAirport'
-          placeholder='SEA or SEATTLE'
+        <IataInput
+          name="homeAirport"
+          placeholder="SEA or SEATTLE"
           value={this.state.homeAirport}
-          onChange={this.handleFuzzyIata}/>
+          setState={(state) => {this.setState(state)}}
+        />;
 
         <input
           type='email'
