@@ -42,9 +42,9 @@ class InspirationForm extends React.Component {
   render() {
     return (
       <div>
-        <h3>Welcome</h3>
+        <h3>Inspiration</h3>
         <form
-          className="inspiration-form"
+          className="inspiration-form generic-forma"
           noValidate>
 
           <input
