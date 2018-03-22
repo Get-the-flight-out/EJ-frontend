@@ -31,6 +31,7 @@ class InspirationForm extends React.Component {
   handleSubmit(e) {
     this.setState({origin: this.props.profile.homeAirport});
     localStorage.setItem('area', this.state.area);
+    localStorage.setItem('origin', this.state.origin);
     this.props.onComplete(this.state)
       .then(() => this.setState({
         origin: '',
