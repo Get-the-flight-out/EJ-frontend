@@ -9,9 +9,9 @@ export default class AuthForm extends React.Component {
 
     let options = {
       shouldSort: true,
-      threshold: 0.6,
+      threshold: 0.2,
       location: 0,
-      distance: 100,
+      distance: 0,
       maxPatternLength: 32,
       minMatchCharLength: 1,
       keys: [{
@@ -56,6 +56,7 @@ export default class AuthForm extends React.Component {
   handleFuzzyIata(e) {
     let {name, value} = e.target;
     let results = this.state.fuse.search(value);
+
     console.log('this is fuse:', results);
     this.handleChange(e);
   }
@@ -92,7 +93,7 @@ export default class AuthForm extends React.Component {
             <input
               type='text'
               name='homeAirport'
-              placeholder='SEA or LAX'
+              placeholder='SEA or SEATTLE'
               pattern=''
               value={this.state.homeAirport}
               onChange={this.handleFuzzyIata}/>

@@ -3,7 +3,6 @@ import './lowfare-form.scss';
 
 class LowFareForm extends React.Component {
   constructor(props) {
-    console.log('hello');
     super(props);
     this.state = {
       origin: '',
@@ -25,14 +24,14 @@ class LowFareForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.onComplete(this.state)
-      // .then(() => this.setState({
-      //   origin: '',
-      //   destination: '',
-      //   departure_date: '',
-      //   nonstop: true,
-      //   max_price: '',
-      //   return_date: '',
-      // }))
+      .then(() => this.setState({
+        origin: '',
+        destination: '',
+        departure_date: '',
+        nonstop: true,
+        max_price: '',
+        return_date: '',
+      }))
       .then(() => this.props.history.push('/content'))
       .catch(error => this.setState({error}));
   }
