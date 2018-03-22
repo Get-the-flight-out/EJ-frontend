@@ -1,1 +1,21 @@
+@import '../../style/base/variables.scss';
 
+.lowfare-form {
+  background: #abaaaa91;
+  width: 390px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  position: absolute;
+  z-index: 10;
+  padding: 60px 60px 80px;
+  left: 5%;
+  opacity: 0.8;
+  border-radius: 2px;
+  box-shadow: 5px 5px 10px 0px;
+}
+
+/*
+ .lowfare-form input {
+   border-bottom: solid 2px $charcoal;
+ }
+ */

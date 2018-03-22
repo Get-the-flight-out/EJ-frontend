@@ -7,6 +7,7 @@ import * as inspirationAction from '../../action/inspiration-actions';
 import * as profileActions from '../../action/profile-actions';
 import InspirationForm from '../inspiration-form/index';
 import InspirationItem from '../inspiration-item/index';
+import './content.scss';
 
 class Content extends React.Component {
   componentWillMount() {
@@ -15,9 +16,11 @@ class Content extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="content-div">
         {/*<h1>Get The Flight Out!</h1>*/}
-        <LowFareForm onComplete={this.props.lowSearch}/>
+        <div className="lowfareform-wrapper">
+          <LowFareForm onComplete={this.props.lowSearch}/>
+        </div>
 
         <InspirationForm
           onComplete={this.props.inpSearch}
