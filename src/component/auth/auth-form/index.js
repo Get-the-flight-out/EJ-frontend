@@ -2,7 +2,7 @@ import React from 'react';
 import Fuse from  'fuse-js-latest';
 import {renderIf} from '../../../lib/utils';
 import airports from '../../../data/airports.json';
-// import FuzzySuggestion from '../../fuzzy-suggestion';
+import FuzzySuggestion from '../../fuzzy-suggestion';
 
 export default class AuthForm extends React.Component {
   constructor(props) {
@@ -42,13 +42,6 @@ export default class AuthForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFuzzyIata = this.handleFuzzyIata.bind(this);
-    this.handleFuzzyClick = this.handleFuzzyClick.bind(this);
-  }
-
-  handleFuzzyClick(e) {
-    e.preventDefault();
-    console.log(e.target.dataset.gnarf);
-    this.setState({homeAirport: e.target.dataset.gnarf})
   }
 
   handleChange(e) {
@@ -106,18 +99,9 @@ export default class AuthForm extends React.Component {
               value={this.state.homeAirport}
               onChange={this.handleFuzzyIata}/>
           )}
-          <ul>
-            {this.state.fuseResults.length ?
-              this.state.fuseResults.map( (airport, index) => {
-              return (
-                <li key={index} onClick={this.handleFuzzyClick}>
-                  <h3 data-gnarf={airport.iata}>{airport.iata}</h3>
-                  <p data-gnarf={airport.iata}>{airport.city}</p>
-                  <p data-gnarf={airport.iata}>{airport.name}</p>
-                </li>)
-              }) : undefined
-            }
-          </ul>
+          <FuzzySuggestion
+            fuseResults={this.state.fuseResults}
+            setState={(state) => this.setState(state)}/>
 
           {renderIf(this.props.auth === 'signup',
             <input
