@@ -37,7 +37,7 @@ export default class AuthForm extends React.Component {
       emailError: null,
       passwordError: null,
       error: null,
-      fuzzyShown: true,
+      fuzzyShown: false,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -52,6 +52,7 @@ export default class AuthForm extends React.Component {
       usernameError: name === 'username' && !value.trim() ? 'Username required' : null,
       emailError: name === 'email' && !value.trim() ? 'Email required' : null,
       passwordError: name === 'password' && !value.trim() ? 'Password required' : null,
+      fuzzyShown: true,
     });
   }
 
@@ -100,9 +101,11 @@ export default class AuthForm extends React.Component {
               value={this.state.homeAirport}
               onChange={this.handleFuzzyIata}/>
           )}
+          {renderIf(this.state.fuzzyShown,
           <FuzzySuggestion
             fuseResults={this.state.fuseResults}
             setState={(state) => this.setState(state)}/>
+          )}
 
           {renderIf(this.props.auth === 'signup',
             <input

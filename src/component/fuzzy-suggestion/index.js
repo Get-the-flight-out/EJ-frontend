@@ -4,14 +4,11 @@ import './fuzzy-suggestion.scss';
 export default class FuzzySuggestions extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      shown: false,
-    }
     this.handleFuzzyClick = this.handleFuzzyClick.bind(this);
   }
   handleFuzzyClick(e) {
     e.preventDefault();
-    this.props.setState({homeAirport: e.target.dataset.iata, shown: false})
+    this.props.setState({homeAirport: e.target.dataset.iata, fuzzyShown: false})
   }
   render() {
     return (<ul className="fuzzy-suggestions">

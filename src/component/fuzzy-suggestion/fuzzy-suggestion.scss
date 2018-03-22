@@ -2,15 +2,20 @@
 @import '../../style/base/variables.scss';
 
 .airport-code:focus + ul {
-  visibility: visible;
+  // visibility: visible;
+}
+
+.fuzzy-suggestions:active {
+
+  // visibility: hidden;
+}
+
+#hiddenMenu {
+  display: none;
 }
 
 .fuzzy-suggestions {
-  // display:none;
-}
-
-.fuzzy-suggestions {
-  visibility: hidden;
+  // visibility: hidden;
   // display: none;
   // opacity: 0;
   // transition: visibility 0s, opacity 0.5s linear;
