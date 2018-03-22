@@ -7,6 +7,8 @@ import FuzzySuggestion from '../../fuzzy-suggestion';
 export default class AuthForm extends React.Component {
   constructor(props) {
     super(props);
+
+
     let options = {
       shouldSort: true,
       threshold: 0.1,
@@ -19,10 +21,11 @@ export default class AuthForm extends React.Component {
         weight: 0.5,
       }, {
         name: 'name',
-        weight: 0.3,
+
+        weight: 0.2,
       }, {
         name: 'city',
-        weight: 0.2,
+        weight: 0.4,
       }],
     };
 
@@ -96,7 +99,8 @@ export default class AuthForm extends React.Component {
               className='airport-code'
               type='text'
               name='homeAirport'
-              placeholder='SEA or LAX'
+              placeholder='SEA or SEATTLE'
+
               pattern=''
               value={this.state.homeAirport}
               onChange={this.handleFuzzyIata}/>
