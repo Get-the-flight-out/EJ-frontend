@@ -1,25 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:400');
 @import '../../style/base/variables.scss';
 
-.airport-code:focus + ul {
-  // visibility: visible;
-}
-
-.fuzzy-suggestions:active {
-
-  // visibility: hidden;
-}
-
-#hiddenMenu {
-  display: none;
-}
 
 .fuzzy-suggestions {
-  // visibility: hidden;
-  // display: none;
-  // opacity: 0;
-  // transition: visibility 0s, opacity 0.5s linear;
-
   font-family: "Work Sans";
   li:hover {
     background-color: $navy;

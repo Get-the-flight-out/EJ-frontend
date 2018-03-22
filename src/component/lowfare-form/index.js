@@ -1,7 +1,7 @@
 import React from 'react';
 import './lowfare-form.scss';
 import {renderIf} from '../../lib/utils';
-import FuzzySuggestion from '../fuzzy-suggestion/index';
+import IataInput from '../iata-input/index';
 
 class LowFareForm extends React.Component {
   constructor(props) {
@@ -13,7 +13,8 @@ class LowFareForm extends React.Component {
       nonstop: true,
       max_price: '',
       return_date: '',
-      fuzzyShown: false,
+      originFuzzyShown: false,
+      destinationFuzzyShown: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,9 +22,13 @@ class LowFareForm extends React.Component {
 
   handleChange(e) {
     let {name, value} = e.target;
-    fuzzyShown: true,
     this.setState({[name]: value});
   };
+
+  handleFuzzyChange(e) {
+    this.setState({fuzzyShown: true});
+    this.handleChange(e);
+  }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -49,12 +54,12 @@ class LowFareForm extends React.Component {
           noValidate>
 
           <div className="lowfare-leftside">
-            <input
-              type="text"
+
+            <IataInput
               name="origin"
               placeholder="Origin"
               value={this.state.origin}
-              onChange={this.handleChange}/>
+              setState={(state) => this.setState(state)}/>
 
             <label className="labels">Departure</label>
             <input
@@ -73,18 +78,11 @@ class LowFareForm extends React.Component {
 
           </div>
           <div className="lowfare-rightside">
-            <input
-              type="text"
+            <IataInput
               name="destination"
               placeholder="Destination"
               value={this.state.destination}
-              onChange={this.handleChange}/>
-
-            {renderIf(this.state.fuzzyShown,
-              <FuzzySuggestion
-                fuseResults={this.state.fuseResults}
-                setState={(state) => this.setState(state)}/>
-            )}
+              setState={(state) => this.setState(state)}/>
 
             <label className="labels">Return</label>
             <input
