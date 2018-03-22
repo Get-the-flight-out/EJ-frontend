@@ -29,7 +29,8 @@ class Content extends React.Component {
         {this.props.inspirationSearch ?
           this.props.inspirationSearch.map((flight, idx) =>
             <div className="images" key={'inspire_'.concat(idx)}>
-              <InspirationItem inspirationSearch={flight}/>
+              <InspirationItem
+                inspirationSearch={flight}/>
             </div>)
           :
           undefined

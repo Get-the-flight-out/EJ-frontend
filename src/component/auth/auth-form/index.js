@@ -6,11 +6,13 @@ import airports from '../../../data/airports.json';
 export default class AuthForm extends React.Component {
   constructor(props) {
     super(props);
+
+
     let options = {
       shouldSort: true,
-      threshold: 0.6,
+      threshold: 0.2,
       location: 0,
-      distance: 100,
+      distance: 0,
       maxPatternLength: 32,
       minMatchCharLength: 1,
       keys: [{
@@ -18,10 +20,11 @@ export default class AuthForm extends React.Component {
         weight: 0.5,
       }, {
         name: 'name',
-        weight: 0.3,
+
+        weight: 0.2,
       }, {
         name: 'city',
-        weight: 0.2,
+        weight: 0.4,
       }],
     };
 
@@ -91,7 +94,8 @@ export default class AuthForm extends React.Component {
             <input
               type='text'
               name='homeAirport'
-              placeholder='SEA or LAX'
+              placeholder='SEA or SEATTLE'
+
               pattern=''
               value={this.state.homeAirport}
               onChange={this.handleFuzzyIata}/>
