@@ -43,7 +43,8 @@ class LowFareForm extends React.Component {
           className="lowfare-form generic-form"
           onSubmit={this.handleSubmit}
           noValidate>
-          <div>
+
+          <div className="lowfare-leftside">
             <input
               type="text"
               name="origin"
@@ -51,6 +52,7 @@ class LowFareForm extends React.Component {
               value={this.state.origin}
               onChange={this.handleChange}/>
 
+            <label className="labels">Departure</label>
             <input
               type="date"
               name="departure_date"
@@ -65,7 +67,6 @@ class LowFareForm extends React.Component {
               value={this.state.max_price}
               onChange={this.handleChange}/>
 
-            <button type="submit">GTFO!!</button>
           </div>
           <div className="lowfare-rightside">
             <input
@@ -75,12 +76,14 @@ class LowFareForm extends React.Component {
               value={this.state.destination}
               onChange={this.handleChange}/>
 
+            <label className="labels">Return</label>
             <input
               type="date"
               name="return_date"
               value={this.state.return_date}
               onChange={this.handleChange}/>
           </div>
+          <button className="lowfare-btn" type="submit">Seach</button>
         </form>
       </div>
     );

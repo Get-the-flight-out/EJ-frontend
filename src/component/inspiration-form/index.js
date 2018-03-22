@@ -1,4 +1,5 @@
 import React from 'react';
+import './inspiration-form.scss';
 
 class InspirationForm extends React.Component {
   constructor(props) {
@@ -50,58 +51,63 @@ class InspirationForm extends React.Component {
 
         <h3>GET OUT RIGHT NOW!!!!</h3>
         <form
-          className="inspiration-form generic-forma"
+          className="inspiration-form generic-form"
           noValidate>
+          <div className="button-form">
+            <input className="search-btn"
+              type="button"
+              name="area"
+              placeholder="USA"
+              value="usa"
+              onClick={this.handleChange}/>
 
-          <input
-            type="number"
-            name="duration"
-            placeholder="duration"
-            value={this.state.duration}
-            onChange={this.handleEnter}/>
+            <input className="search-btn"
+              type="button"
+              name="area"
+              placeholder="EUROPE"
+              value="eu"
+              onClick={this.handleChange}/>
 
-          <input
-            type="number"
-            name="max_price"
-            placeholder="Max Price"
-            value={this.state.max_price}
-            onChange={this.handleEnter}/>
+            <input className="search-btn"
+              type="button"
+              name="area"
+              placeholder="ASIA"
+              value="asia"
+              onClick={this.handleChange}/>
 
-          <input
-            type="date"
-            name="departure_date"
-            placeholder="departure Date"
-            value={this.state.departure_date}
-            onChange={this.handleEnter}/>
+            <input className="search-btn"
+              type="button"
+              name="area"
+              placeholder="The WORLD!"
+              value="all"
+              onClick={this.handleChange}/>
+          </div>
 
-          <input
-            type="button"
-            name="area"
-            placeholder="USA"
-            value="usa"
-            onClick={this.handleChange}/>
+          <div className="filter-form">
+            <label className="form-label">Departure</label>
+            <div>
+              <input className="filters"
+                type="date"
+                name="departure_date"
+                placeholder="departure Date"
+                value={this.state.departure_date}
+                onChange={this.handleEnter}/>
+              <input className="filters"
+                type="number"
+                name="duration"
+                placeholder="duration"
+                value={this.state.duration}
+                onChange={this.handleEnter}/>
 
-          <input
-            type="button"
-            name="area"
-            placeholder="EUROPE"
-            value="eu"
-            onClick={this.handleChange}/>
+              <input className="filters"
+                type="number"
+                name="max_price"
+                placeholder="Max Price"
+                value={this.state.max_price}
+                onChange={this.handleEnter}/>
 
-          <input
-            type="button"
-            name="area"
-            placeholder="ASIA"
-            value="asia"
-            onClick={this.handleChange}/>
-
-          <input
-            type="button"
-            name="area"
-            placeholder="The WORLD!"
-            value="all"
-            onClick={this.handleChange}/>
-
+            </div>
+          </div>
         </form>
       </div>
     );
