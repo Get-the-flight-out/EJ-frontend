@@ -77,7 +77,7 @@ class InspirationForm extends React.Component {
               type="button"
               name="area"
               placeholder="The WORLD!"
-              value="all"
+              value="anywhere"
               onClick={this.handleChange}/>
           </div>
 

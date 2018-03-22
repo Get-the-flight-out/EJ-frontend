@@ -52,7 +52,7 @@ class LowFareForm extends React.Component {
             <input
               type="text"
               name="origin"
-              placeholder="Origin"
+              placeholder="What is your origin?"
               value={this.state.origin}
               onChange={this.handleChange}/>
 
@@ -76,7 +76,7 @@ class LowFareForm extends React.Component {
             <input
               type="text"
               name="destination"
-              placeholder="Destination"
+              placeholder="What is your destination?"
               value={this.state.destination}
               onChange={this.handleChange}/>
 

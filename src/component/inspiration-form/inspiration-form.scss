@@ -24,6 +24,7 @@ input[type=button] {
   transition: 150ms;
   outline: none;
   box-shadow: 0px 0px 5px 0px;
+  opacity: .7;
 }
 
 .EU {
@@ -40,7 +41,7 @@ input[type=button] {
 }
 
 input[type=button]:hover {
-  opacity: .7;
+  opacity: 1;
 }
 
 .filter-form {

@@ -4,11 +4,10 @@
 .lowfare-form {
   background: #abaaaa91;
   width: 35%;
-  margin-top: 14%;
-  margin-bottom: 7%;
+  margin-top: 12%;
+  margin-bottom: 4%;
   position: absolute;
-  z-index: 10;
-  padding: 60px 60px 80px;
+  padding: 5%;
   left: 5%;
   opacity: 0.8;
   border-radius: 2px;
@@ -18,23 +17,26 @@
 .lowfare-form input[type=text],
 .lowfare-form input[type=number],
 .lowfare-form input[type=date] {
-  font-weight: bold;
   border: 0;
+  letter-spacing: 2px;
   font-family: Raleway, Helvetica;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.651);
+  font-size: .9vw;
+  font-weight: bold;
+  color: black;
+  border-bottom: solid 1.5px rgba(0, 0, 0, 0.651);
   box-shadow: none;
   border-radius: 0px;
   outline: none;
-  background-color: rgba(0,0,0,0);
+  background-color: transparent;
   width: 100%;
   padding: 2%;
-  margin-bottom: 2%;
+  margin-bottom: 10%;
  };
 
  .lowfare-form input[type=text]::placeholder,
  .lowfare-form input[type=number]::placeholder,
  .lowfare-form input[type=date]::placeholder{
-  color: black;
+  color:black;
  }
 
  .lowfare-form input[type=date]::-webkit-inner-spin-button {
@@ -74,9 +76,10 @@
 .labels {
   font-size: 8px;
   font-family: Raleway, Helvetica;
-  color: black;
-  font-weight: bold;
   margin-left: 2%;
+  color: black;
+  letter-spacing: 2px;
+  font-weight: bold;
 }
 
 .lowfare-btn:hover {
