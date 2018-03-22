@@ -16,11 +16,11 @@ class Content extends React.Component {
 
   render() {
     return (
-      <div className="content-div">
+      <div id="content-div" className="content-div">
         <div className="lowfareform-wrapper">
           <LowFareForm onComplete={this.props.lowSearch}/>
         </div>
-
+        <h3 id="discover-destinations" className="discover-destinations">Discover Destinations</h3>
         <InspirationForm
           onComplete={this.props.inpSearch}
           profile={this.props.profile}/>

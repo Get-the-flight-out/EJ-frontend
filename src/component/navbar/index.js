@@ -5,18 +5,29 @@ import {tokenDelete} from '../../action/auth-actions';
 import './navbar.scss';
 
 class Navbar extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      opaque: true,
+    };
+    this.makeOpaque = this.makeOpaque.bind(this);
+  }
+  makeOpaque(e) {
+    let opaque = window.pageYOffset > 100 ? false : true;
+    this.setState({opaque});
+  }
   render() {
-    console.log('Navbar __PROPS__', this.props);
+    window.onscroll = this.makeOpaque;
     return (
-      <header>
+      <header className={this.state.opaque ? 'opaqueHeader' : 'non-opaqueHeader'}>
         <div className='container'>
           <Link to='/'>
-            <img className='logo' src='../../src/assets/logo.png' alt='logo' />
+            {/* <img className='logo' src='../../src/assets/logo.png' alt='logo' /> */}
           </Link>
           <nav>
             <ul>
-              <li><Link to='/'>Home</Link></li>
-              <li><Link to='/aboutus'>About Us</Link></li>
+              <li><a href="#content-div">Home</a></li>
+              <li><a href="#discover-destinations">Discover</a></li>
             </ul>
           </nav>
         </div>
