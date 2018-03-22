@@ -38,6 +38,7 @@ header::after {
 .logo {
   float: left;
   padding: 10px 0;
+
 }
 
 nav {
@@ -47,12 +48,12 @@ nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
-  height: 110px;
+  height: 90px;
 }
 nav li {
   display: inline-block;
-  margin-left: 70px;
-  padding-top: 53px;
+  margin-left: 60px;
+  padding-top: 40px;
   position: relative;
 }
 nav a {

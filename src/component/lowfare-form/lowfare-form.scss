@@ -2,16 +2,15 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400');
 
 .lowfare-form {
-  background: #abaaaa91;
-  width: 35%;
-  margin-top: 12%;
-  margin-bottom: 4%;
+  background: #abaaaa63;
+  width: 45%;
   position: absolute;
-  padding: 5%;
   left: 5%;
   opacity: 0.8;
   border-radius: 2px;
   box-shadow: 5px 5px 10px 0px;
+  top: 20%;
+  padding: 5%;
 }
 
 .lowfare-form input[type=text],
@@ -22,6 +21,7 @@
   font-family: Raleway, Helvetica;
   font-size: .9vw;
   font-weight: bold;
+  text-transform: uppercase;
   color: black;
   border-bottom: solid 1.5px rgba(0, 0, 0, 0.651);
   box-shadow: none;
@@ -29,8 +29,7 @@
   outline: none;
   background-color: transparent;
   width: 100%;
-  padding: 2%;
-  margin-bottom: 10%;
+  margin: 4%;
  };
 
  .lowfare-form input[type=text]::placeholder,
@@ -46,7 +45,7 @@
 .lowfare-leftside {
   display: inline-block;
   width: 48%;
-  margin-right: 15px;
+  margin-right: 20px;
 }
 
 .lowfare-rightside {
@@ -66,17 +65,17 @@
   font-family: Raleway, Helvetica;
   background-color: rgb(84, 81, 71);
   position: absolute;
-  bottom: 30%;
-  right: 12%;
+  bottom: 12%;
+  right: 20%;
   transition: 150ms;
   color: white;
   border: none;
 }
 
 .labels {
-  font-size: 8px;
+  font-size: 10px;
   font-family: Raleway, Helvetica;
-  margin-left: 2%;
+  margin: 4%;
   color: black;
   letter-spacing: 2px;
   font-weight: bold;

@@ -22,12 +22,12 @@ class Navbar extends React.Component {
       <header className={this.state.opaque ? 'opaqueHeader' : 'non-opaqueHeader'}>
         <div className='container'>
           <Link to='/'>
-            <img className='logo' src='../../src/assets/logo.png' alt='logo' />
+            {/* <img className='logo' src='../../src/assets/logo.png' alt='logo' /> */}
           </Link>
           <nav>
             <ul>
               <li><Link to='/'>Home</Link></li>
-              <li><Link to='/aboutus'>About Us</Link></li>
+              <li><Link to='/aboutus'>Discover</Link></li>
             </ul>
           </nav>
         </div>
