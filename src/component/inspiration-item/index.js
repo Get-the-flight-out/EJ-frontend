@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {connect} from 'react-redux';
 import { airportLookup } from '../../lib/airport-lookup';
 import * as inspirationAction from '../../action/inspiration-actions';
@@ -32,6 +33,7 @@ class FlightItem extends React.Component {
         :
         undefined
       }
+
       </div>
     );
   }

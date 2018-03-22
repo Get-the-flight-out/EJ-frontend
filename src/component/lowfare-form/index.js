@@ -39,9 +39,8 @@ class LowFareForm extends React.Component {
   render() {
     return (
       <div>
-        <h3>Welcome</h3>
         <form
-          className="lowfare-form"
+          className="lowfare-form generic-form"
           onSubmit={this.handleSubmit}
           noValidate>
 

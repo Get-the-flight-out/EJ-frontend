@@ -11,7 +11,7 @@ export const inspirationAction = search => dispatch => {
     origin: search.origin,
     area: search.area,
   };
-  if (search.direct) queryData.direct= search.direct;
+  if (search.direct) queryData.direct = search.direct;
   if (search.duration) queryData.duration = search.duration;
   if (search.max_price) queryData.max_price = search.max_price;
   if (search.destination) queryData.destination = search.destination;
