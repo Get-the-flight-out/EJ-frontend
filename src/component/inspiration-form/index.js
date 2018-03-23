@@ -83,7 +83,7 @@ class InspirationForm extends React.Component {
 
           <div id="filter-form">
             <label className="form-label">Departure</label>
-            <div>
+            <div className="search-inputs">
               <input className="filters"
                 type="date"
                 name="departure_date"
