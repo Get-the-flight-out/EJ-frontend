@@ -74,6 +74,7 @@ class LowFareForm extends React.Component {
           </div>
           <div className="lowfare-rightside">
             <IataInput
+              className="fuzzy-low-fare"
               name="destination"
               placeholder="What is your destination?"
               value={this.state.destination}
