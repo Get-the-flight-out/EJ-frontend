@@ -1,25 +1,40 @@
-@import url('https://fonts.googleapis.com/css?family=Work+Sans:400');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400');
 @import '../../style/base/variables.scss';
 
+.airport-selection {
+  position: relative;
+  z-index: 2;
+  opacity: 1;
+}
 
-.fuzzy-suggestions {
-  font-family: "Work Sans";
-  li:hover {
-    background-color: $navy;
-    h3 {
-      color: $beige;
-    }
-  }
+.fuzzy-input {
+  position: absolute;
+  margin-left: 4%;
+  width: 100%;
+  font-family: "Raleway";
+  background-color: #ddd;
   li {
-    background-color: $beige;
-    padding-left: 10px;
-
+    padding: 4%;
+    :first-child {
+      padding-bottom: .5%;
+    }
     h3 {
-      color: $navy;
+      font-size: 1vw;
+      color: black;
       font-weight: bold;
     }
     p {
+      font-size: .8vw;
+    }
+  }
 
+  li:hover {
+    background-color: #444;
+    h3 {
+      color: white;
+    }
+    p {
+      color: #ddd
     }
   }
 }
