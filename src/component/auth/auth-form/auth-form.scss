@@ -1,0 +1,59 @@
+.auth-form-div {
+
+}
+
+input[name='email'],
+input[name='username'],
+input[name='homeAirport'],
+input[name='password'] {
+  border: 0;
+  letter-spacing: 2px;
+  font-family: Raleway, Helvetica;
+  font-size: .9vw;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black;
+  border-bottom: solid 1.5px rgba(0, 0, 0, 0.651);
+  box-shadow: none;
+  border-radius: 0px;
+  outline: none;
+  background-color: transparent;
+  width: 90%;
+  margin: 3%;
+}
+
+input[name='email']::placeholder,
+input[name='username']::placeholder,
+input[name='homeAirport']::placeholder,
+input[name='password']::placeholder{
+  color:black;
+}
+
+input[name='username'] {
+  margin-top: 3vw;
+}
+
+input[name='email'] {
+  margin-left: 3px;
+}
+
+.signin-btn {
+  display: block;
+  width: auto;
+  letter-spacing: 2px;
+  border-radius: 2%;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.5vw;
+  font-family: Raleway, Helvetica;
+  background-color: #545147;
+  margin: 0 auto;
+  transition: 150ms;
+  color: white;
+  border: none;
+}
+
+.signin-btn:hover {
+  color: black;
+  background-color: rgb(227, 206, 149)
+}
