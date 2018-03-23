@@ -14,17 +14,17 @@ export const signupRequest = user => dispatch => {
     .send(user)
     .then(res => {
       dispatch(tokenSet(res.text));
-      try {
-        localStorage.setItem('token', res.text);
-      } catch(e) {
-        console.log('signin error', e);
-        throw e;
-      }
-    });
+      localStorage.setItem('token', res.text);
+    })
+    .catch(err => console.log(err));
 };
 
 export const signinRequest = user => dispatch => {
   return superagent.get(`${__API_URL__}/signin`)
     .auth(user.username, user.password)
-    .then(res => dispatch(tokenSet(res.text)));
+    .then(res => {
+      dispatch(tokenSet(res.text));
+      localStorage.setItem('token', res.text);
+    })
+    .catch(err => console.log(err));
 };

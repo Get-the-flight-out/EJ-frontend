@@ -50,7 +50,7 @@ class LowFareForm extends React.Component {
 
             <IataInput
               name="origin"
-              placeholder="Origin"
+              placeholder="What is your origin?"
               value={this.state.origin}
               setState={(state) => this.setState(state)}/>
 
@@ -73,7 +73,7 @@ class LowFareForm extends React.Component {
           <div className="lowfare-rightside">
             <IataInput
               name="destination"
-              placeholder="Destination"
+              placeholder="What is your destination?"
               value={this.state.destination}
               setState={(state) => this.setState(state)}/>
 
