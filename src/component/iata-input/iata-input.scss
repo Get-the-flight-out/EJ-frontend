@@ -2,21 +2,25 @@
 @import '../../style/base/variables.scss';
 
 
-.fuzzy-suggestions {
+.fuzzy-input {
   font-family: "Work Sans";
-  li:hover {
-    background-color: $navy;
-    h3 {
-      color: $beige;
-    }
-  }
+
   li {
-    background-color: $beige;
     padding-left: 10px;
 
     h3 {
       color: $navy;
       font-weight: bold;
+    }
+    p {
+
+    }
+  }
+
+  li:hover {
+    background-color: $navy;
+    h3 {
+      color: $beige;
     }
     p {
 
