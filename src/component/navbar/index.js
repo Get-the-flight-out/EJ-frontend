@@ -22,7 +22,7 @@ class Navbar extends React.Component {
       <header className={this.state.opaque ? 'opaqueHeader' : 'non-opaqueHeader'}>
         <div className='container'>
           <Link to='/'>
-            {/* <img className='logo' src='../../src/assets/logo.png' alt='logo' /> */}
+            <img className='logo' src='../../src/assets/logos/logo.png' alt='logo' />
           </Link>
           <nav>
             <ul>
