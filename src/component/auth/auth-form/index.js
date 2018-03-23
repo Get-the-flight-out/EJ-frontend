@@ -1,3 +1,4 @@
+import './auth-form.scss';
 import React from 'react';
 import Fuse from  'fuse-js-latest';
 import IataInput from '../../iata-input';
@@ -35,7 +36,7 @@ export default class AuthForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     let {username, email, password, homeAirport} = this.state;
-    this.props.onComplete({ username, email, password, homeAirport })
+    this.props.onComplete({ username, email, password, homeAirport });
     this.setState({ username: '', email: '', password: '', homeAirport: ''});
   }
 
@@ -46,7 +47,7 @@ export default class AuthForm extends React.Component {
           name="homeAirport"
           placeholder="SEA or SEATTLE"
           value={this.state.homeAirport}
-          setState={(state) => {this.setState(state)}}
+          setState={(state) => {this.setState(state);}}
         />;
 
         <input
@@ -60,7 +61,6 @@ export default class AuthForm extends React.Component {
 
     return (
       <div className="auth-form-div">
-        <h3>Welcome</h3>
         <form
           className='auth-form'
           onSubmit={this.handleSubmit}
@@ -86,7 +86,7 @@ export default class AuthForm extends React.Component {
             value={this.state.password}
             onChange={this.handleChange}/>
 
-          <button type='submit'>{this.props.auth}</button>
+          <button className="signin-btn" type='submit'>let go explore</button>
         </form>
       </div>
     );
