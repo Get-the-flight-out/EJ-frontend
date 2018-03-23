@@ -4,13 +4,13 @@
   padding-top: 12vw;
   background-image: url("../../assets/background/signupimg.jpg");
   background-repeat: no-repeat;
-  // zoom: 1.2;
   background-size: 110%;
   width: 100%;
   height: 55vw;
 }
 
 .auth-wrapper {
+  box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.25098039215686274);
   width: 25vw;
   height: 25vw;
   background-color: rgba(96, 96, 96, 0.468);
@@ -19,13 +19,23 @@
 }
 
 .welcome {
-  text-shadow: 5px 5px 8px #474747;
+  letter-spacing: 5px;
+  text-shadow: 0px 0px 13px rgb(71, 71, 71);
   padding-top: 5%;
   line-height: 4vw;
   text-align: center;
-  font-size: 40px;
+  font-size: 3vw;
   color: black;
   font-family: Raleway, Helvetica;
+}
+
+.funny {
+  text-align: center;
+  font-size: 1vw;
+  color: #eaeaea;
+  margin-top: 1vw;
+  letter-spacing: .1vw;
+  text-shadow: 1px 1px 3px black;
 }
 
 .links-to-site {
@@ -43,7 +53,7 @@
   background-color: rgba(96, 96, 96, 0.668);
   text-decoration: none;
   margin-right: 10%;
-  font-size: 30px;
+  font-size: 1.5vw;
 }
 
 .signin {
@@ -53,7 +63,7 @@
   background-color: rgba(96, 96, 96, 0.668);
   color: black;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 1.5vw;
 }
 
 .signin:hover, .signup:hover {
@@ -75,15 +85,16 @@
 .signin-link, .signup-link {
   letter-spacing: 2px;
   border-radius: 2%;
+  text-shadow: 0px 0px 2px white;
   padding: 0%;
+  padding-top: 1vw;
   font-family: Raleway, Helvetica;
-  background-color: #ffffff9e;
   color: black;
   text-decoration: none;
-  font-size: 1.5vw;
+  font-size: 1vw;
   text-align: center;
   display: block;
-  width: 8vw;
+  width: 12vw;
   height: 1.5vw;
   margin: auto;
 }
@@ -91,6 +102,5 @@
 .signin-link:hover,
 .signup-link:hover {
   transition: 150ms;
-  color: rgb(60, 60, 60);
-  background-color: rgb(244, 244, 244);
+  color: whitesmoke;
 }

@@ -87,7 +87,7 @@ export default class AuthForm extends React.Component {
             value={this.state.password}
             onChange={this.handleChange}/>
 
-          <button className="signin-btn" type='submit'>let go explore</button>
+          <button className="signin-btn" type='submit'>{ this.props.type === 'signin' ? 'Sign In' : 'Sign Up' }</button>
         </form>
       </div>
     );

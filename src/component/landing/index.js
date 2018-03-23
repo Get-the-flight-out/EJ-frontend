@@ -37,25 +37,25 @@ class Landing extends React.Component {
   render() {
     let rootJsx =
       <div className="auth-wrapper">
-        <h2 className="welcome" >Welcome to Get The Flight Out</h2>
+        <h2 className="welcome" >Get The</h2>
+        <h2 className="welcome" >Flight Out</h2>
+        <h2 className="funny" >dont quit your day dream</h2>
         <div className="links-to-site">
-          <Link className="signup" to={routes.SIGNUP}>SignUp</Link>
-          <Link className="signin" to={routes.SIGNIN}>SignIn</Link>
+          <Link className="signup" to={routes.SIGNUP}>Sign Up</Link>
+          <Link className="signin" to={routes.SIGNIN}>Sign In</Link>
         </div>
       </div>;
 
     let signinJsx =
       <div className="auth-wrapper">
         <AuthForm type="signin" onComplete={this.handleSignin} />
-        <p className="ask-about-account">don't have an account?</p>
-        <Link className="signup-link" to={routes.SIGNUP}>signup</Link>
+        <Link className="signup-link" to={routes.SIGNUP}>don't have an account?</Link>
       </div>;
 
     let signupJsx =
       <div className="auth-wrapper">
         <AuthForm onComplete={this.handleSignup} />
-        <p className="ask-about-account">already have an account?</p>
-        <Link className="signin-link" to={routes.SIGNIN}>Sign in</Link>
+        <Link className="signin-link" to={routes.SIGNIN}>already have an account?</Link>
       </div>;
 
     console.log('landing: going to: ', location.pathname);
