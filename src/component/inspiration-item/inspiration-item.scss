@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400');
+
 .flight-obj {
   display: inline-block;
   outline: 4px solid white;
@@ -5,6 +7,13 @@
   height: 35vw;
   text-align: center;
   background-color: hsla(240, 8%, 53%, 0.31);
+}
+
+.city-name {
+  font-family: Raleway, Helvetica;
+  color:black;
+  margin: 2%;
+  letter-spacing: 2px;
 }
 
 .airport-image, .img-obj {
