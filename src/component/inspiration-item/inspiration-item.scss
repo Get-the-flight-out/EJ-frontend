@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400');
+
+.flight-obj {
+  display: inline-block;
+  outline: 4px solid white;
+  width: 30vw;
+  height: 35vw;
+  // text-align: center;
+  background-color: hsla(240, 8%, 53%, 0.31);
+}
+
+.flight-item {
+  float: left;
+}
+
+// .city-name {
+//   font-family: Raleway, Helvetica;
+//   color:black;
+//   margin: 2%;
+//   letter-spacing: 2px;
+// }
+
+.city-item-name {
+    float: left;
+    margin-left: 25px;
+    margin-top: 12px;
+    font-size: 1.5vw;
+}
+
+.city-item-code {
+    float: right;
+    margin-right: 25px;
+    margin-top: 12px;
+    font-size: 1.5vw;
+}
+
+.city-depart {
+  clear: both;
+  float: left;
+  margin-top: 10%;
+  margin-left: 6%;
+}
+
+.city-return {
+  clear: both;
+  float: left;
+  margin-top: 2%;
+  margin-left: 6%;
+}
+
+.city-price {
+  display: block;
+  clear: both;
+  float: right;
+  margin-top: -6%;
+  margin-right: 6%;
+  font-size: 1.7vw;
+}
+
+.img-obj {
+  height: 26vw;
+  width: 30vw;
+}
+
+.image-link {
+  color: inherit
+}
+
+
+.airport-image, .img-obj {
+  width: 100%;
+  text-align: center;
+  height: 26vw;
+}
+
+.image-holder {
+  text-align: center;
+}

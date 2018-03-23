@@ -1,10 +1,12 @@
 import React from 'react';
 import './lowfare-form.scss';
+import {renderIf} from '../../lib/utils';
+import IataInput from '../iata-input/index';
 
 class LowFareForm extends React.Component {
   constructor(props) {
-    console.log('hello');
     super(props);
+    console.log('################', this.props);
     this.state = {
       origin: '',
       destination: '',
@@ -33,61 +35,59 @@ class LowFareForm extends React.Component {
         max_price: '',
         return_date: '',
       }))
-      .then(() => this.props.history.push('/content'))
+      .then(() => document.querySelector('#scott_was_here').click())
       .catch(error => this.setState({error}));
   }
 
   render() {
     return (
       <div>
-        <h3>Welcome</h3>
         <form
-          className="lowfare-form"
+          className="lowfare-form generic-form"
           onSubmit={this.handleSubmit}
           noValidate>
 
-          <input
-            type="text"
-            name="origin"
-            placeholder="origin"
-            value={this.state.origin}
-            onChange={this.handleChange}/>
+          <div className="lowfare-leftside">
 
-          <input
-            type="text"
-            name="destination"
-            placeholder="destination"
-            value={this.state.destination}
-            onChange={this.handleChange}/>
+            <IataInput
+              name="origin"
+              placeholder="What is your origin?"
+              value={this.state.origin}
+              setState={(state) => this.setState(state)}/>
 
-          <input
-            type="date"
-            name="departure_date"
-            placeholder="departure Date"
-            value={this.state.departure_date}
-            onChange={this.handleChange}/>
+            <label className="labels">Departure</label>
+            <input
+              type="date"
+              name="departure_date"
+              placeholder="departure Date"
+              value={this.state.departure_date}
+              onChange={this.handleChange}/>
 
-          <input
-            type="checkbox"
-            name="nonstop"
-            placeholder="non-stop"
-            value={this.state.nonstop}
-            onChange={this.handleChange}/>
+            <input
+              type="number"
+              name="max_price"
+              placeholder="Max Price"
+              value={this.state.max_price}
+              onChange={this.handleChange}/>
 
-          <input
-            type="number"
-            name="max_price"
-            placeholder="Max Price"
-            value={this.state.max_price}
-            onChange={this.handleChange}/>
+          </div>
+          <div className="lowfare-rightside">
+            <IataInput
+              name="destination"
+              placeholder="What is your destination?"
+              value={this.state.destination}
+              setState={(state) => this.setState(state)}/>
 
-          <input
-            type="date"
-            name="return_date"
-            value={this.state.return_date}
-            onChange={this.handleChange}/>
+            <label className="labels">Return</label>
+            <input
+              type="date"
+              name="return_date"
+              value={this.state.return_date}
+              onChange={this.handleChange}/>
+          </div>
 
-          <button type="submit">GTFO!!</button>
+          <a id="scott_was_here" href="#filter-form"></a>
+          <button className="lowfare-btn" type="submit">Seach</button>
         </form>
       </div>
     );

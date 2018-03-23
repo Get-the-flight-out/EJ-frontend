@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400');
+@import '../../style/base/variables.scss';
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
+
+header {
+  margin: 0;
+  font-family: 'Work Sans', Helvetica, sans-serif;
+  font-weight: 400;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  transition: 350ms;
+}
+
+/* clear fix to avoid header disappearing */
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.non-opaqueHeader {
+  opacity: 1;
+  background: #dfdddd;
+  box-shadow: 0 1px 3px gray;
+}
+
+.opaqueHeader {
+  opacity: .8;
+  background: #abaaaa00;
+  box-shadow: 0 0 19px 0.5px #333333;
+}
+
+.logo {
+  height: 50px;
+  margin-top: 8px;
+  float: left;
+  padding: 10px 0;
+  opacity: .5;
+}
+
+nav {
+  float: right;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: 90px;
+}
+nav li {
+  display: inline-block;
+  margin-left: 60px;
+  padding-top: 40px;
+  position: relative;
+}
+nav a {
+  // color: $charcoal;
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+nav a:hover {
+  color: rgb(205, 211, 207);
+}
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: $charcoal;
+
+  /* animation of nav bar links */
+  position: absolute;
+  top: 0;
+  width: 0%;
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
