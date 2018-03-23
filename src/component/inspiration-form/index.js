@@ -81,7 +81,7 @@ class InspirationForm extends React.Component {
               onClick={this.handleChange}/>
           </div>
 
-          <div className="filter-form">
+          <div id="filter-form">
             <label className="form-label">Departure</label>
             <div>
               <input className="filters"
