@@ -16,7 +16,6 @@ export const inspirationAction = search => dispatch => {
   if (search.max_price) queryData.max_price = search.max_price;
   if (search.destination) queryData.destination = search.destination;
   if (search.departure_date) queryData.departure_date = search.departure_date;
-  console.log('###########', queryData);
   return superagent.get(`${__API_URL__}/inspiration-search`)
     .set('Authorization', `Bearer ${token}`)
     .query(queryData)

@@ -11,8 +11,6 @@ import './content.scss';
 
 class Content extends React.Component {
   componentWillMount() {
-    console.log('componentWillMount: Attempting to get profile: token: ',
-      JSON.parse(this.props.token));
     this.props.getMyProfile(this.props.token);
   }
 
