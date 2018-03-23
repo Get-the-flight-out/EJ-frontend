@@ -6,6 +6,7 @@ import IataInput from '../iata-input/index';
 class LowFareForm extends React.Component {
   constructor(props) {
     super(props);
+    console.log('################', this.props);
     this.state = {
       origin: '',
       destination: '',
@@ -34,7 +35,7 @@ class LowFareForm extends React.Component {
         max_price: '',
         return_date: '',
       }))
-      .then(() => this.props.history.push('/content'))
+      .then(() => document.querySelector('#scott_was_here').click())
       .catch(error => this.setState({error}));
   }
 
@@ -85,6 +86,8 @@ class LowFareForm extends React.Component {
               value={this.state.return_date}
               onChange={this.handleChange}/>
           </div>
+
+          <a id="scott_was_here" href="#filter-form"></a>
           <button className="lowfare-btn" type="submit">Seach</button>
         </form>
       </div>

@@ -20,7 +20,10 @@ class Content extends React.Component {
     return (
       <div id="content-div" className="content-div">
         <div className="lowfareform-wrapper">
-          <LowFareForm onComplete={this.props.lowSearch}/>
+          <LowFareForm
+            onComplete={this.props.lowSearch}
+            history={this.props.history}
+          />
         </div>
         <h3 id="discover-destinations" className="discover-destinations">Discover Destinations</h3>
         <InspirationForm
