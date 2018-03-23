@@ -36,9 +36,11 @@ header::after {
 }
 
 .logo {
+  height: 50px;
+  margin-top: 8px;
   float: left;
   padding: 10px 0;
-
+  opacity: .5;
 }
 
 nav {
