@@ -54,6 +54,16 @@
   display: inline-block;
 }
 
+.btn-link {
+  text-decoration: none;
+  color: white;
+}
+
+.btn-link:hover {
+  color: black;
+}
+
+
 .lowfare-btn {
   display: inline-block;
   width: auto;
