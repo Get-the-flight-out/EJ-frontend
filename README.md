@@ -76,14 +76,17 @@ In order to run the tests, verify the backend is up and listening to requests fi
 
 ## Functionality
 `/` Welcome page displays the ability for the user to signin or signup.
-<!-- Add pic of / page -->
+![main](./photos/main.png)
 `/signin` Signin page allows the user to sign into GTFO
-<!-- Pic of signin page -->
+![signin](./photos/signin.png)
 `/signup` Signup page allows the user to create an account, set their home airport and sign in
-<!-- pic of signup page -->
+![signup](./photos/signup.png)
 `/content` Content page displays the search options for finding flights. This is divided into a low fare flight search form and an inspirational flight search form. Results of the users search are displayed in a list below.
-<!-- pic of primary page -->
-<!-- pic of search results -->
+![content](./photos/content.png)
+`/content` low fair search results
+![searches](./photos/searchresults.png)
+`/content` inspiration search
+![inspiration](./photos/inspirationsearch.png)
 
 ## Tests
 This project uses Travis-CI for continuous integration. Every Pull Request to the master branch is initiated will launch travis, which in turn runs Jest tests. Pull requests are not merged until all travis-ci tests pass.
