@@ -61,7 +61,7 @@ export default class IataInput extends React.Component {
 
   render() {
     return (
-      <div className="airport-selection">
+      <div className={this.props.className}>
         <input
           type="text"
           autoComplete="off"
