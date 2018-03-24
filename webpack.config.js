@@ -19,7 +19,7 @@ let plugins = [
   }),
 ];
 
-if(production) {
+if (production) {
   plugins = plugins.concat([new CleanPlugin(), new UglifyPlugin()]);
 }
 
@@ -52,20 +52,7 @@ module.exports = {
         loader: ExtractPlugin.extract(['css-loader', 'sass-loader']),
       },
       {
-        test: /\.(woff|woff2|ttf|eot|glyph|\.svg)$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 10000,
-              name: 'font/[name].[ext]',
-            },
-          },
-        ],
-      },
-      {
-        test: /\.(jpg|jpeg|gif|png|tiff|svg)$/,
-        exclude: /\.glyph.svg/,
+        test: /\.(jpe?g|png)$/i,
         use: [
           {
             loader: 'url-loader',
@@ -73,16 +60,6 @@ module.exports = {
               limit: 6000,
               name: 'image/[name].[ext]',
             },
-          },
-        ],
-      },
-      {
-        test: /\.(mp3|aac|aiff|wav|flac|m4a|mp4|ogg)$/,
-        exclude: /\.glyph.svg/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: { name: 'audio/[name].[ext]' },
           },
         ],
       },
