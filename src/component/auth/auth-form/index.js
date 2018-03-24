@@ -49,7 +49,7 @@ export default class AuthForm extends React.Component {
           placeholder="SEA or SEATTLE"
           value={this.state.homeAirport}
           setState={(state) => {this.setState(state);}}
-        />;
+        />
 
         <input
           type='email'
