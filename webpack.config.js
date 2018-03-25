@@ -25,11 +25,11 @@ if (production) {
 
 module.exports = {
   plugins,
-  entry: `${__dirname}/src/main.js`,
   devServer: {
     historyApiFallback: true,
   },
-  devtool: production ? undefined : 'eval',
+  devtool: production ? undefined : 'source-map',
+  entry: `${__dirname}/src/main.js`,
   output: {
     path: `${__dirname}/build`,
     filename: 'bundle-[hash].js',
