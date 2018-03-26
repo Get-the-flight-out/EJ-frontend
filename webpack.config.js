@@ -52,17 +52,26 @@ module.exports = {
         loader: ExtractPlugin.extract(['css-loader', 'sass-loader']),
       },
       {
-        test: /\.(jpe?g|png)$/i,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 6000,
-              name: 'image/[name].[ext]',
-            },
+        test: /\.(png|jpg|svg)$/i,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: 'image/[name].[hash].[ext]',
           },
-        ],
+        }],
       },
+      // {
+      //   test: /\.(jpe?g|png)$/i,
+      //   use: [
+      //     {
+      //       loader: 'url-loader',
+      //       options: {
+      //         limit: 6000,
+      //         name: 'image/[name].[ext]',
+      //       },
+      //     },
+      //   ],
+      // },
     ],
   },
 };
