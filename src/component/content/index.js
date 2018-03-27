@@ -36,7 +36,7 @@ class Content extends React.Component {
             this.props.inspirationSearch.map((flight, idx) =>
               <div className="flight-obj" key={'inspire_'.concat(idx)}>
                 <InspirationItem
-                  images={images}
+                  images={images.images}
                   inspirationSearch={flight}/>
               </div>)
             :
@@ -48,7 +48,7 @@ class Content extends React.Component {
           {this.props.lowFareSearch ?
             this.props.lowFareSearch.map((flight, idx) =>
               <div className="flight-obj" key={'lowfare_'.concat(idx)}>
-                <FlightItem images={images} lowFareSearch={flight}/>
+                <FlightItem images={images.images} lowFareSearch={flight}/>
               </div>)
             :
             undefined
