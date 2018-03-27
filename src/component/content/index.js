@@ -18,7 +18,6 @@ class Content extends React.Component {
   }
 
   render() {
-    console.log('IMAGES:', images);
     return (
       <div id="content-div" className="content-div">
         <div className="lowfareform-wrapper">
