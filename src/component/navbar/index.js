@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {renderIf} from '../../lib/utils';
 import {tokenDelete} from '../../action/auth-actions';
+import logoPng from '../../assets/logos/logo-grey.png';
 import './navbar.scss';
 
 class Navbar extends React.Component {
@@ -22,7 +23,7 @@ class Navbar extends React.Component {
       <header className={this.state.opaque ? 'opaqueHeader' : 'non-opaqueHeader'}>
         <div className='container'>
           <Link to='/'>
-            <img className='logo' src='../../src/assets/logos/logo-grey.png' alt='logo' />
+            <img className='logo' src={logoPng} alt='logo' />
           </Link>
           <nav>
             <ul>
