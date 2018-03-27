@@ -6,7 +6,6 @@ import IataInput from '../iata-input/index';
 class LowFareForm extends React.Component {
   constructor(props) {
     super(props);
-    console.log('################', this.props);
     this.state = {
       origin: '',
       destination: '',

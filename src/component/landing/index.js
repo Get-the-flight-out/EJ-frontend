@@ -58,7 +58,6 @@ class Landing extends React.Component {
         <Link className="signin-link" to={routes.SIGNIN}>already have an account?</Link>
       </div>;
 
-    console.log('landing: going to: ', location.pathname);
     return (
       <div className="landing-container">
         {location.pathname === routes.ROOT ? rootJsx : undefined}

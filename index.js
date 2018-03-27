@@ -5,11 +5,6 @@ const app = express();
 const cors = require('cors');
 
 app.use(express.static(`${__dirname}/build`));
-// app.use(cors({
-//   origin: 'http://localhost:8080',
-// }));
-
-// TODO: fix the url for the backend
 
 app.get('*',(request,response) => {
   response.sendFile(`${__dirname}/build/index.html`);
