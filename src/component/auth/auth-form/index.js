@@ -44,11 +44,12 @@ export default class AuthForm extends React.Component {
     let signupJsx =
       <React.Fragment>
         <IataInput
+          className="fuzzy-auth"
           name="homeAirport"
           placeholder="SEA or SEATTLE"
           value={this.state.homeAirport}
           setState={(state) => {this.setState(state);}}
-        />;
+        />
 
         <input
           type='email'

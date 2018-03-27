@@ -49,6 +49,7 @@ class LowFareForm extends React.Component {
           <div className="lowfare-leftside">
 
             <IataInput
+              className="fuzzy-low-fare"
               name="origin"
               placeholder="What is your origin?"
               value={this.state.origin}
@@ -72,6 +73,7 @@ class LowFareForm extends React.Component {
           </div>
           <div className="lowfare-rightside">
             <IataInput
+              className="fuzzy-low-fare"
               name="destination"
               placeholder="What is your destination?"
               value={this.state.destination}

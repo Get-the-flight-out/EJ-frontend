@@ -22,7 +22,6 @@ export default class IataInput extends React.Component {
         weight: 0.5,
       }, {
         name: 'name',
-
         weight: 0.2,
       }, {
         name: 'city',
@@ -34,7 +33,7 @@ export default class IataInput extends React.Component {
       fuseResults: [],
       fuzzyShown: false,
       fuse: new Fuse(airports, options),
-    }
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleFuzzyClick = this.handleFuzzyClick.bind(this);
@@ -61,7 +60,7 @@ export default class IataInput extends React.Component {
 
   render() {
     return (
-      <div className="airport-selection">
+      <div className={this.props.className}>
         <input
           type="text"
           autoComplete="off"
@@ -75,18 +74,18 @@ export default class IataInput extends React.Component {
           <ul className="fuzzy-input">
             {this.state.fuseResults.length ?
               this.state.fuseResults.map( (airport, index) => {
-              return (
-                <li key={index} onClick={this.handleFuzzyClick}>
-                  <h3 data-iata={airport.iata}>{airport.iata}</h3>
-                  <p data-iata={airport.iata}>{airport.city}</p>
-                  <p data-iata={airport.iata}>{airport.name}</p>
-                </li>
-              )
+                return (
+                  <li key={index} onClick={this.handleFuzzyClick}>
+                    <h3 data-iata={airport.iata}>{airport.iata}</h3>
+                    <p data-iata={airport.iata}>{airport.city}</p>
+                    <p data-iata={airport.iata}>{airport.name}</p>
+                  </li>
+                );
               }) : undefined
             }
           </ul>
         )}
       </div>
-    )
+    );
   }
 }
