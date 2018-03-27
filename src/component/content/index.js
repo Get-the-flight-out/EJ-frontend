@@ -8,7 +8,7 @@ import * as profileActions from '../../action/profile-actions';
 import InspirationForm from '../inspiration-form/index';
 import InspirationItem from '../inspiration-item/index';
 import './content.scss';
-import images from '../../lib/images';
+import {images} from '../../lib/images';
 
 class Content extends React.Component {
   componentWillMount() {
@@ -18,6 +18,7 @@ class Content extends React.Component {
   }
 
   render() {
+    console.log('IMAGES:', images);
     return (
       <div id="content-div" className="content-div">
         <div className="lowfareform-wrapper">
@@ -36,7 +37,7 @@ class Content extends React.Component {
             this.props.inspirationSearch.map((flight, idx) =>
               <div className="flight-obj" key={'inspire_'.concat(idx)}>
                 <InspirationItem
-                  images={images.images}
+                  images={images}
                   inspirationSearch={flight}/>
               </div>)
             :
@@ -48,7 +49,7 @@ class Content extends React.Component {
           {this.props.lowFareSearch ?
             this.props.lowFareSearch.map((flight, idx) =>
               <div className="flight-obj" key={'lowfare_'.concat(idx)}>
-                <FlightItem images={images.images} lowFareSearch={flight}/>
+                <FlightItem images={images} lowFareSearch={flight}/>
               </div>)
             :
             undefined
