@@ -166,6 +166,7 @@ class Content extends React.Component {
             this.props.inspirationSearch.map((flight, idx) =>
               <div className="flight-obj" key={'inspire_'.concat(idx)}>
                 <InspirationItem
+                  images={images}
                   inspirationSearch={flight}/>
               </div>)
             :
