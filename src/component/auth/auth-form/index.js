@@ -44,11 +44,12 @@ export default class AuthForm extends React.Component {
     let signupJsx =
       <React.Fragment>
         <IataInput
+          className="fuzzy-auth"
           name="homeAirport"
           placeholder="SEA or SEATTLE"
           value={this.state.homeAirport}
           setState={(state) => {this.setState(state);}}
-        />;
+        />
 
         <input
           type='email'
@@ -86,7 +87,7 @@ export default class AuthForm extends React.Component {
             value={this.state.password}
             onChange={this.handleChange}/>
 
-          <button className="signin-btn" type='submit'>let go explore</button>
+          <button className="signin-btn" type='submit'>{ this.props.type === 'signin' ? 'Sign In' : 'Sign Up' }</button>
         </form>
       </div>
     );

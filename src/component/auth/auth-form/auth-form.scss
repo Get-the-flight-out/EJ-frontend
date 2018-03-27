@@ -34,7 +34,7 @@ input[name='username'] {
 }
 
 input[name='email'] {
-  margin-left: 3px;
+  margin-left: 13px;
 }
 
 .signin-btn {
@@ -46,14 +46,15 @@ input[name='email'] {
   text-decoration: none;
   font-size: 1.5vw;
   font-family: Raleway, Helvetica;
-  background-color: #545147;
+  background-color: rgba(96, 96, 96, 0.668);
+  color: black;
   margin: 0 auto;
   transition: 150ms;
-  color: white;
   border: none;
 }
 
 .signin-btn:hover {
-  color: black;
-  background-color: rgb(227, 206, 149)
+  transition: 150ms;
+  color: rgb(225, 225, 225);
+  background-color: rgb(74, 74, 74);
 }

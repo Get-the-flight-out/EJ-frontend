@@ -21,39 +21,41 @@
 // }
 
 .city-item-name {
-    float: left;
-    margin-left: 25px;
-    margin-top: 12px;
-    font-size: 1.5vw;
+  float: left;
+  margin-left: 2vw;
+  margin-top: 1vw;
+  font-size: 1.5vw;
 }
 
 .city-item-code {
-    float: right;
-    margin-right: 25px;
-    margin-top: 12px;
-    font-size: 1.5vw;
+  float: right;
+  margin-right: 2vw;
+  margin-top: 1vw;
+  font-size: 1.5vw;
 }
 
 .city-depart {
   clear: both;
   float: left;
-  margin-top: 10%;
-  margin-left: 6%;
+  font-size: 1.1vw;
+  margin-top: 2.3vw;
+  margin-left: 1.8vw;
 }
 
 .city-return {
   clear: both;
   float: left;
-  margin-top: 2%;
-  margin-left: 6%;
+  font-size: 1.1vw;
+  margin-top: .4vw;
+  margin-left: 1.8vw;
 }
 
 .city-price {
   display: block;
   clear: both;
   float: right;
-  margin-top: -6%;
-  margin-right: 6%;
+  margin-top: -2vw;
+  margin-right: 1vw;
   font-size: 1.7vw;
 }
 
