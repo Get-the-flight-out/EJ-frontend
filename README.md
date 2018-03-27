@@ -184,9 +184,8 @@ Time:        5.55s
 ## Creators
 The Creators of Get the Flight Out!
 
-<!-- TODO: need some pics, bios, GH and Linkedin links! -->
 
-* Heath Smith
-* Steve Carpenter
-* Jordan Van Ness
-* Liza Oh
+* [Heath Smith](https://github.com/Iamheathsmith)
+* [Steven Carpenter](https://github.com/stevegcarpenter)
+* [Jordan Van Ness](https://github.com/Jordanwvn)
+* [Liza (Victoria) Oh](https://github.com/veoh1989)
