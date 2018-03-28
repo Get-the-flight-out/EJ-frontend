@@ -26,10 +26,15 @@ class Navbar extends React.Component {
             <img className='logo' src={logoPng} alt='logo' />
           </Link>
           <nav>
-            <ul>
-              <li><a className="nav-links" href="#content-div">Home</a></li>
-              <li><a className="nav-links" href="#discover-destinations">Discover</a></li>
-            </ul>
+            {window.location.href.indexOf('content') > -1 ?
+              <ul>
+                <li><a className="nav-links" href="#content-div">Home</a></li>
+                <li><a className="nav-links" href="#discover-destinations">Discover</a></li>
+                <li><a className="nav-links" onClick={() => {
+                  localStorage.clear();
+                  location.reload();}
+                }>Sign Out</a></li>
+              </ul> : null}
           </nav>
         </div>
       </header>
