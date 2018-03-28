@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400');
 
 .landing-container {
-  padding-top: 12vw;
+  padding-top: 15%;
   background-image: url("../../assets/background/signupimg.jpg");
   background-repeat: no-repeat;
   background-size: 110%;
@@ -103,4 +103,14 @@
 .signup-link:hover {
   transition: 150ms;
   color: whitesmoke;
+}
+
+@media screen and (max-width: 450px) {
+  .landing-container {
+    padding-top: 22%
+  }
+
+  .auth-wrapper {
+    height: 30vw;
+  }
 }

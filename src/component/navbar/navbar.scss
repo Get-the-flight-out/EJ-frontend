@@ -50,11 +50,11 @@ nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
-  height: 90px;
+  height: 60px;
 }
 nav li {
   display: inline-block;
-  margin-left: 60px;
+  margin-left: 3vw;
   padding-top: 40px;
   position: relative;
 }
@@ -83,4 +83,24 @@ nav a::before {
 
 nav a:hover::before {
   width: 100%;
+}
+
+@media screen and (max-width: 720px) {
+  .logo {
+    height: 30px;
+  }
+
+  .nav-links {
+    font-size: 12px;
+  }
+
+  nav li {
+    padding-top: 30px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .nav-links {
+    font-size: 8px;
+  }
 }

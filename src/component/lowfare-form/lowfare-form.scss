@@ -96,3 +96,10 @@
   color: black;
   background-color: rgb(226, 229, 233)
 }
+
+@media screen and (max-width: 540px) {
+  .lowfare-form {
+    margin-top: 16vw !important;
+    width: 80% !important;
+  }
+}

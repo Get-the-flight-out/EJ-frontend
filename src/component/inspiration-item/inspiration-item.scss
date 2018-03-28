@@ -71,3 +71,34 @@
 .image-holder {
   text-align: center;
 }
+
+@media screen and (max-width: 720px) {
+  .flight-obj {
+    width: 45%;
+    height: 40vw;
+  }
+
+  .airport-image {
+    height: 30vw;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .flight-obj {
+    width: 80% !important;
+    height: 75vw !important;
+  }
+
+  .airport-image {
+    height: 60vw !important;
+  }
+
+  .city-item-name, .city-item-code,
+  .city-price {
+    font-size: 3.5vw !important;
+  }
+
+  .city-depart, .city-return {
+    font-size: 2.5vw !important;
+  }
+}

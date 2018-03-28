@@ -1,7 +1,3 @@
-.auth-form-div {
-
-}
-
 input[name='email'],
 input[name='username'],
 input[name='homeAirport'],
@@ -31,10 +27,6 @@ input[name='password']::placeholder{
 
 input[name='username'] {
   margin-top: 3vw;
-}
-
-input[name='email'] {
-  margin-left: 13px;
 }
 
 .signin-btn {
