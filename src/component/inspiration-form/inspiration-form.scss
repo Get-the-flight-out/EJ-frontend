@@ -85,3 +85,28 @@ input[type=button]:hover {
   font-weight: bold;
   margin: 1%;
 }
+
+@media screen and (max-width: 540px) {
+  #filter-form {
+    width: 80% !important;
+  }
+
+  input[type=button] {
+    height: 90% !important;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  input[type=button] {
+    width: 35% !important;
+    margin-top: 2% !important;
+  }
+
+  .EU, .ALL {
+    margin-right: 0px !important;
+  }
+
+  #filter-form {
+    margin-top: 105px !important;
+  }
+}

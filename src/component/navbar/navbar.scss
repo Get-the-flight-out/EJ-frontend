@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:400');
 @import '../../style/base/variables.scss';
 
-
 .container {
   width: 95%;
   margin: 0 auto;
@@ -84,4 +83,18 @@ nav a::before {
 
 nav a:hover::before {
   width: 100%;
+}
+
+@media screen and (max-width: 720px) {
+  .logo {
+    height: 30px;
+  }
+
+  .nav-links {
+    font-size: 12px;
+  }
+
+  nav li {
+    padding-top: 30px;
+  }
 }
