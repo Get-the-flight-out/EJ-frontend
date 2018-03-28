@@ -7,3 +7,75 @@ body {
   text-transform: uppercase;
   font-family: "Work Sans" // Jordan
 };
+
+@media screen and (max-width: 720px) {
+    .logo {
+      height: 30px !important;
+    }
+
+    .nav-links {
+      font-size: 12px;
+    }
+
+    nav li {
+      padding-top: 30px !important;
+    }
+
+    .flight-obj {
+      width: 45% !important;
+      height: 40vw !important;
+    }
+
+    .airport-image {
+      height: 30vw !important;
+    }
+  }
+
+@media screen and (max-width: 540px) {
+  .lowfare-form {
+    margin-top: 16vw !important;
+    width: 80% !important;
+  }
+
+  #filter-form {
+    width: 80% !important;
+  }
+
+  input[type=button] {
+    height: 90% !important;
+  }
+}
+
+
+@media screen and (max-width: 420px) {
+  .flight-obj {
+    width: 80% !important;
+    height: 75vw !important;
+  }
+
+  .airport-image {
+    height: 60vw !important;
+  }
+
+  .city-item-name, .city-item-code,
+  .city-price {
+    font-size: 3.5vw !important;
+  }
+
+  .city-depart, .city-return {
+    font-size: 2.5vw !important;
+  }
+
+  input[type=button] {
+    width: 35% !important;
+    margin-top: 2% !important;
+  }
+
+  .EU, .ALL {
+    margin-right: 0px !important;
+  }
+
+  #filter-form {
+    margin-top: 105px !important;
+  }
+}

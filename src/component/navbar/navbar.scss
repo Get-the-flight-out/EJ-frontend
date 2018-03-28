@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:400');
 @import '../../style/base/variables.scss';
 
+
 .container {
   width: 95%;
   margin: 0 auto;
@@ -50,11 +51,11 @@ nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
-  height: 90px;
+  height: 60px;
 }
 nav li {
   display: inline-block;
-  margin-left: 60px;
+  margin-left: 3vw;
   padding-top: 40px;
   position: relative;
 }
