@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400');
 
+.application {
+  height: 800px;
+}
+
 .landing-container {
   padding-top: 15%;
   background-image: url("../../assets/background/signupimg.jpg");
   background-repeat: no-repeat;
-  background-size: 110%;
+  background-size: cover;
   width: 100%;
-  height: 55vw;
+  height: 100%;
 }
 
 .auth-wrapper {
@@ -16,6 +20,7 @@
   background-color: rgba(96, 96, 96, 0.468);
   display: block;
   margin: 0 auto;
+  zoom: 1.2;
 }
 
 .welcome {
@@ -105,12 +110,21 @@
   color: whitesmoke;
 }
 
+@media screen and (max-width: 720px) {
+  .auth-wrapper {
+    zoom: 1.8;
+  }
+}
+
 @media screen and (max-width: 450px) {
   .landing-container {
-    padding-top: 22%
+    padding-top: 22%;
+    background-size: cover;
+    height: 156vw;
   }
 
   .auth-wrapper {
     height: 30vw;
+    zoom: 3;
   }
 }
