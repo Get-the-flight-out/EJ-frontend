@@ -10,7 +10,7 @@ class LowFareForm extends React.Component {
       origin: '',
       destination: '',
       departure_date: '',
-      nonstop: true,
+      nonstop: false,
       max_price: '',
       return_date: '',
     };

@@ -6,13 +6,13 @@ class FlightItem extends React.Component {
   render() {
     let retDate;
     let part1;
-    // let image = `../../../src/assets/airport-img/${this.props.lowFareSearch.itineraries[0].outbound.flights[0].destination.airport}.jpg`;
-    const iata = this.props.lowFareSearch.itineraries[0].outbound.flights[0].destination.airport;
+    const path = this.props.lowFareSearch.itineraries[0].outbound.flights;
+    const iata = path[path.length - 1].destination.airport;
     const image = this.props.images[iata] ? this.props.images[iata] : this.props.images['GENERIC'];
     let origin = localStorage.getItem('origin');
-    let airport = this.props.lowFareSearch.itineraries[0].outbound.flights[0].destination.airport;
-    let city = airportLookup(this.props.lowFareSearch.itineraries[0].outbound.flights[0].destination.airport);
-    let depDate = this.props.lowFareSearch.itineraries[0].outbound.flights[0].departs_at;
+    let airport = path[path.length - 1].destination.airport;
+    let city = airportLookup(path[path.length - 1].destination.airport);
+    let depDate = path[path.length - 1].departs_at;
     this.props.lowFareSearch.itineraries[0].inbound ? retDate = this.props.lowFareSearch.itineraries[0].inbound.flights[0].departs_at : undefined;
 
     {retDate !== undefined ?
