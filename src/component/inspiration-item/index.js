@@ -11,11 +11,10 @@ class FlightItem extends React.Component {
     let area = localStorage.getItem('area');
     let origin = localStorage.getItem('origin');
     let city = this.props.inspirationSearch.destination;
-    let leave = new Date(this.props.inspirationSearch.departure_date);
-    let retDate = this.props.inspirationSearch.return_date;
-    // let temp = new Date(depDate);
-    let test = depDate.toString().split('17:00');
-    console.log(test[0]);
+    let dep = new Date(this.props.inspirationSearch.departure_date);
+    let ret = new Date(this.props.inspirationSearch.return_date);
+    let depDate = dep.toString().split('17:00');
+    let retDate = ret.toString().split('17:00');
     const iata = this.props.inspirationSearch.destination;
     const image = this.props.images[iata] ? this.props.images[iata] : this.props.images['GENERIC'];
     return (
@@ -23,8 +22,8 @@ class FlightItem extends React.Component {
         <img className="airport-image" src={image} />
         <h3 className="city-item-name">{airportLookup(city)}</h3>
         <h3 className="city-item-code">{city}</h3>
-        <h3 className="city-depart"> Depart Date: {test[0]}</h3>
-        <h3 className="city-return"> Return Date: {retDate}</h3>
+        <h3 className="city-depart"> Depart Date: {depDate[0]}</h3>
+        <h3 className="city-return"> Return Date: {retDate[0]}</h3>
         <h3 className="city-price"> ${this.props.inspirationSearch.price}</h3>
 
       </a>
