@@ -102,4 +102,8 @@
     margin-top: 16vw !important;
     width: 80% !important;
   }
+
+  .lowfare-form input[type=text], .lowfare-form input[type=number], .lowfare-form input[type=date] {
+    font-size: 1.9vw;
+  }
 }
