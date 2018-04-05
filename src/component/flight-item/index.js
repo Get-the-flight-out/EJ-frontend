@@ -48,6 +48,3 @@ class FlightItem extends React.Component {
 }
 
 export default FlightItem;
-
-
-// test.toLocaleTimeString('en-US')

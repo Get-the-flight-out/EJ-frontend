@@ -2,6 +2,7 @@ import React from 'react';
 import './lowfare-form.scss';
 import {renderIf} from '../../lib/utils';
 import IataInput from '../iata-input/index';
+import { RingLoader } from 'react-spinners';
 
 class LowFareForm extends React.Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class LowFareForm extends React.Component {
       nonstop: false,
       max_price: '',
       return_date: '',
+      updating: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,6 +27,7 @@ class LowFareForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.setState({updating: true});
     this.props.onComplete(this.state)
       .then(() => this.setState({
         origin: '',
@@ -33,6 +36,7 @@ class LowFareForm extends React.Component {
         nonstop: false,
         max_price: '',
         return_date: '',
+        updating: false,
       }))
       .then(() => document.querySelector('#scott_was_here').click())
       .catch(error => this.setState({error}));
@@ -41,6 +45,20 @@ class LowFareForm extends React.Component {
   render() {
     return (
       <div>
+
+        {this.state.updating === true ?
+          <div className="loading">
+            <RingLoader
+              color={'#123abc'}
+              loading={this.state.loading}
+            />
+            <h1 className="load-saying">Please wait</h1>
+            <h1 className="load-saying-2">We are fiding the best flight just for you!</h1>
+          </div>
+          :
+          undefined
+        }
+
         <form
           className="lowfare-form generic-form"
           onSubmit={this.handleSubmit}
