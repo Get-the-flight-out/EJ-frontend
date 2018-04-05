@@ -45,19 +45,14 @@ class LowFareForm extends React.Component {
   render() {
     return (
       <div>
-
-        {this.state.updating === true ?
-          <div className="loading">
-            <RingLoader
-              color={'#123abc'}
-              loading={this.state.loading}
-            />
-            <h1 className="load-saying">Please wait</h1>
-            <h1 className="load-saying-2">We are fiding the best flight just for you!</h1>
-          </div>
-          :
-          undefined
-        }
+        <div className={this.state.updating === true ? 'loading' : 'hide'}>
+          <RingLoader
+            color={'#123abc'}
+            loading={this.state.loading}
+          />
+          <h1 className="load-saying">Please wait</h1>
+          <h1 className="load-saying-2">We are fiding the best flight just for you!</h1>
+        </div>
 
         <form
           className="lowfare-form generic-form"
