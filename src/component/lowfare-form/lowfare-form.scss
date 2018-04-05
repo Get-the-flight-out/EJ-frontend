@@ -98,6 +98,19 @@
 }
 
 .loading {
+  transition: 1s;
+  opacity: 1;
+  z-index: 999;
+  position: fixed;
+  width: 75%;
+  left: 50%;
+  margin-left: -37.5%;
+}
+
+.hide {
+  transition: 1s;
+  opacity: 0;
+  z-index: -9;
   position: fixed;
   width: 75%;
   left: 50%;
