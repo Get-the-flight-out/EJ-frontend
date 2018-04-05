@@ -57,7 +57,7 @@ class Content extends React.Component {
   }
 }
 
-let mapSetToProps = state => ({
+let mapStateToProps = state => ({
   lowFareSearch: state.lowFareSearch,
   profile: state.profile,
   inspirationSearch: state.inspirationSearch,
@@ -70,4 +70,4 @@ const mapDispatchToProps = dispatch => ({
   getMyProfile : token => dispatch(profileActions.getMyProfileRequest(token)),
 });
 
-export default connect(mapSetToProps, mapDispatchToProps)(Content);
+export default connect(mapStateToProps, mapDispatchToProps)(Content);

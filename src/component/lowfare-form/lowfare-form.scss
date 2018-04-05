@@ -97,6 +97,31 @@
   background-color: rgb(226, 229, 233)
 }
 
+.loading {
+  position: fixed;
+  width: 75%;
+  left: 50%;
+  margin-left: -37.5%;
+}
+
+.css-jxiqlq {
+  display: block;
+  margin: 0 auto;
+  margin-top: 30%;
+}
+
+.load-saying {
+  text-align: center;
+  color: white;
+  margin-top: 5%;
+}
+
+.load-saying-2 {
+  text-align: center;
+  color: white;
+  margin-top: 2%;
+}
+
 @media screen and (max-width: 540px) {
   .lowfare-form {
     margin-top: 16vw !important;

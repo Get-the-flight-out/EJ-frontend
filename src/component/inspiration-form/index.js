@@ -11,6 +11,7 @@ class InspirationForm extends React.Component {
       direct: '',
       duration: '',
       max_price: '',
+      updating: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleEnter = this.handleEnter.bind(this);
@@ -30,7 +31,7 @@ class InspirationForm extends React.Component {
   };
 
   handleSubmit(e) {
-    this.setState({origin: this.props.profile.homeAirport});
+    this.setState({origin: this.props.profile.homeAirport, updating: true});
     localStorage.setItem('area', this.state.area);
     localStorage.setItem('origin', this.state.origin);
     this.props.onComplete(this.state)
@@ -40,6 +41,7 @@ class InspirationForm extends React.Component {
         direct: '',
         duration: '',
         max_price: '',
+        updating: false,
       }))
       .then(() => this.props.history.push('/content'))
       .catch(error => this.setState({error}));
