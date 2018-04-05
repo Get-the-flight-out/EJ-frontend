@@ -30,12 +30,12 @@ class LowFareForm extends React.Component {
     this.setState({updating: true});
     this.props.onComplete(this.state)
       .then(() => this.setState({
-        // origin: '',
-        // destination: '',
-        // departure_date: '',
-        // nonstop: false,
-        // max_price: '',
-        // return_date: '',
+        origin: '',
+        destination: '',
+        departure_date: '',
+        nonstop: false,
+        max_price: '',
+        return_date: '',
         updating: false,
       }))
       .then(() => document.querySelector('#scott_was_here').click())
