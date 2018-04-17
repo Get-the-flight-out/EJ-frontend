@@ -3,7 +3,7 @@ import React from 'react';
 import './inspiration-item.scss';
 import {connect} from 'react-redux';
 import { airportLookup } from '../../lib/airport-lookup';
-import * as inspirationAction from '../../action/inspiration-actions';
+import * as lowFareActions from '../../action/lowfare-actions';
 
 class FlightItem extends React.Component {
 
@@ -18,23 +18,33 @@ class FlightItem extends React.Component {
     const iata = this.props.inspirationSearch.destination;
     const image = this.props.images[iata] ? this.props.images[iata] : this.props.images['GENERIC'];
     return (
-      <div className="flight-item" ><a className="image-link" href={`https://www.kayak.com/flights/${origin}-${city}/${depDate}/${retDate}/?sort=price_a`}>
-        <img className="airport-image" src={image} />
-        <h3 className="city-item-name">{airportLookup(city)}</h3>
-        <h3 className="city-item-code">{city}</h3>
-        <h3 className="city-depart"> Depart Date: {depDate[0]}</h3>
-        <h3 className="city-return"> Return Date: {retDate[0]}</h3>
-        <h3 className="city-price"> ${this.props.inspirationSearch.price}</h3>
+      <div className="flight-item" onClick={() =>
+        this.props.lowSearch({
+          origin: this.props.profile.homeAirport,
+          destination: this.props.inspirationSearch.destination,
+          departure_date: this.props.inspirationSearch.departure_date,
+          return_date: this.props.inspirationSearch.return_date,
+        })}><a className="image-link">
+          <img className="airport-image" src={image} />
+          <h3 className="city-item-name">{airportLookup(city)}</h3>
+          <h3 className="city-item-code">{city}</h3>
+          <h3 className="city-depart"> Depart Date: {depDate[0]}</h3>
+          <h3 className="city-return"> Return Date: {retDate[0]}</h3>
+          <h3 className="city-price"> ${this.props.inspirationSearch.price}</h3>
 
-      </a>
+        </a>
       </div>
     );
   }
 }
 
-
-const mapDispatchToProps = dispatch => ({
-  inpSearch : search => dispatch(inspirationAction.inspirationAction(search)),
+let mapStateToProps = state => ({
+  profile: state.profile,
 });
 
-export default connect(null, mapDispatchToProps)(FlightItem);
+
+const mapDispatchToProps = dispatch => ({
+  lowSearch : search => dispatch(lowFareActions.lowFareSearchAction(search)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(FlightItem);
