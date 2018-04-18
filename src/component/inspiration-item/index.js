@@ -2,6 +2,7 @@ import React from 'react';
 
 import './inspiration-item.scss';
 import {connect} from 'react-redux';
+import { RingLoader } from 'react-spinners';
 import { airportLookup } from '../../lib/airport-lookup';
 import * as lowFareActions from '../../action/lowfare-actions';
 
@@ -18,21 +19,15 @@ class FlightItem extends React.Component {
     const iata = this.props.inspirationSearch.destination;
     const image = this.props.images[iata] ? this.props.images[iata] : this.props.images['GENERIC'];
     return (
-      <div className="flight-item" onClick={() =>
-        this.props.lowSearch({
-          origin: this.props.profile.homeAirport,
-          destination: this.props.inspirationSearch.destination,
-          departure_date: this.props.inspirationSearch.departure_date,
-          return_date: this.props.inspirationSearch.return_date,
-        })}><a className="image-link">
-          <img className="airport-image" src={image} />
-          <h3 className="city-item-name">{airportLookup(city)}</h3>
-          <h3 className="city-item-code">{city}</h3>
-          <h3 className="city-depart"> Depart Date: {depDate[0]}</h3>
-          <h3 className="city-return"> Return Date: {retDate[0]}</h3>
-          <h3 className="city-price"> ${this.props.inspirationSearch.price}</h3>
+      <div className="flight-item"><a className="image-link">
+        <img className="airport-image" src={image} />
+        <h3 className="city-item-name">{airportLookup(city)}</h3>
+        <h3 className="city-item-code">{city}</h3>
+        <h3 className="city-depart"> Depart Date: {depDate[0]}</h3>
+        <h3 className="city-return"> Return Date: {retDate[0]}</h3>
+        <h3 className="city-price"> ${this.props.inspirationSearch.price}</h3>
 
-        </a>
+      </a>
       </div>
     );
   }
