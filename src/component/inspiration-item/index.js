@@ -33,13 +33,4 @@ class FlightItem extends React.Component {
   }
 }
 
-let mapStateToProps = state => ({
-  profile: state.profile,
-});
-
-
-const mapDispatchToProps = dispatch => ({
-  lowSearch : search => dispatch(lowFareActions.lowFareSearchAction(search)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(FlightItem);
+export default FlightItem;
